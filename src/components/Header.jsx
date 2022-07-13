@@ -4,17 +4,20 @@ import Options from './Options'
 
 function Header() {
     return (
-        <div className="
+        <>
+            <div className="
             fixed w-full 
             flex justify-between items-center p-3 
-            bg-white dark:bg-gray-700 shadow-md" >
+            bg-white dark:bg-costum-gray-600 shadow-md z-50" >
 
-            <h1 className='topic text-xl '>Jonas</h1>
+                <h1 className='topic text-xl cursor-pointer' onClick={() => {window.location.href='/'}}>Jonas</h1>
 
-            <Options />
+                <Options />
 
 
-        </ div>
+            </ div>
+            <div className='w-full h-[4.28rem]' />
+        </>
     )
 }
 

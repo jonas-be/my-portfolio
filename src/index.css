@@ -7,7 +7,7 @@
 
   .background {
     @apply
-    bg-white dark:bg-gray-700
+    bg-white 
   }
 
   .topic {
@@ -18,7 +18,7 @@
 
   .text {
     @apply 
-    text-black dark:text-white
+    text-gray-500 dark:text-gray-300
   }
 }
 

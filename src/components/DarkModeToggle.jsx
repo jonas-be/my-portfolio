@@ -49,7 +49,7 @@ function DarkModeToggle() {
     return (
         <button
             onClick={toggleDarkMode}
-            className="flex justify-center items-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-2xl text-sm p-2.5"
+            className="flex justify-center items-center text hover:bg-gray-100 dark:hover:bg-costum-gray-500 rounded-2xl text-sm p-2.5"
         >
             {!darkModeIcon ?
                 <svg
