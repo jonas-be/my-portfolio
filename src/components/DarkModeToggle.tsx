@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function DarkModeToggle() {
 
-    const [darkModeIcon, setDarkModeIcon] = useState()
+    const [darkModeIcon, setDarkModeIcon] = useState<boolean>(true)
 
     useEffect(() => {
         function isDarkModeEnabled() {
@@ -33,7 +33,7 @@ function DarkModeToggle() {
         }
     }
 
-    function setDarkMode(dark) {
+    function setDarkMode(dark: boolean) {
         if (dark) {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
@@ -54,7 +54,7 @@ function DarkModeToggle() {
             {!darkModeIcon ?
                 <svg
                     id="theme-toggle-dark-icon"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ function DarkModeToggle() {
                 :
                 <svg
                     id="theme-toggle-light-icon"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"

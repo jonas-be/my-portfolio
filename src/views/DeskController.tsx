@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import DeskGraphic from '../components/DeskGraphic'
 import { FaArrowDown, FaArrowUp } from "react-icons/fa"
 
 
@@ -27,7 +26,7 @@ function DeskController() {
         console.log(deskHeight);
     }
 
-    async function fetchSetPosition(positionName) {
+    async function fetchSetPosition(positionName: string) {
         const res = await fetch(`http://localhost:5000/height?position_name=${positionName}`, {
             method: "POST"
         })

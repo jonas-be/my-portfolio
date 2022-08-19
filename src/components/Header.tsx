@@ -1,5 +1,4 @@
 import React from 'react'
-import DarkModeToggle from './DarkModeToggle'
 import Options from './Options'
 
 function Header() {

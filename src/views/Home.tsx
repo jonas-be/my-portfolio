@@ -28,11 +28,8 @@ function Home() {
 
             </div>
 
-
             <div className='h-[32.5vh]' />
-
             <Footer />
-
         </div>
     )
 }
