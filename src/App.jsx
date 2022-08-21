@@ -1,5 +1,4 @@
 import Home from './views/Home';
-import DeskController from './views/DeskController';
 import Error from './views/Error';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -24,14 +23,11 @@ function App() {
   return (
     <div className='bg-white dark:bg-costum-gray-700 min-h-[100vh]'>
 
-
       <Router>
         <Routes >
 
           <Route path='/' element={<Home />} />
-          <Route path='/desk' element={<DeskController />} />
           <Route path='*' element={<Error />} />
-
 
         </Routes>
       </Router>
