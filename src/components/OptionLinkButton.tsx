@@ -11,7 +11,7 @@ function OptionLinkButton({icon, link, customClassName}: Props) {
     return (
         customClassName == null ?
             <a href={link}
-               className="flex justify-center items-center text hover:bg-gray-100 dark:hover:bg-costum-gray-500 rounded-2xl text-sm p-2.5">
+               className="flex justify-center items-center text hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-2xl text-sm p-2.5">
                 {icon}
             </a>
             :

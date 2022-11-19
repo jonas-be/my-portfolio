@@ -7,7 +7,7 @@ function Header() {
             <div className="
             fixed w-full 
             flex justify-between items-center p-3 
-            bg-white dark:bg-costum-gray-600 shadow-md z-50" >
+             z-50" >
 
                 <h1 className='topic text-xl cursor-pointer' onClick={() => {window.location.href='/'}}>Jonas</h1>
 
