@@ -7,8 +7,10 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "animate.css": "^4.1.1",
     "next": "latest",
     "react": "latest",
+    "react-animation-on-scroll": "^5.1.0",
     "react-dom": "latest",
     "react-parallax-mouse": "^2.0.1",
     "typescript": "latest"

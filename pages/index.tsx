@@ -3,6 +3,8 @@ import OptionLinkButton from "../src/components/OptionLinkButton";
 import Footer from "../src/components/Footer";
 import {MouseParallaxChild, MouseParallaxContainer} from "react-parallax-mouse";
 import React from "react";
+import {AnimationOnScroll} from "react-animation-on-scroll";
+import "animate.css/animate.min.css";
 
 function Index() {
 
@@ -11,51 +13,116 @@ function Index() {
         <div className="w-full h-full">
             <div className="absolute overflow-hidden"
                  style={{
-                "-webkit-mask-image": "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))",
-                "mask-image": "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))"
-            } as React.CSSProperties}
+                     "-webkit-mask-image": "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))",
+                     "mask-image": "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))"
+                 } as React.CSSProperties}
             >
                 <div className="flex flex-col items-center w-screen h-full text-violet-500">
                     <div className="flex">
-                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 2000" fill="currentColor">
-                            <g id="layer1"><path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/></g>
+                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 4000 2000" fill="currentColor">
+                            <g id="layer1">
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/>
+                            </g>
                         </svg>
-                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 2000" fill="currentColor">
-                            <g id="layer1"><path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/></g>
+                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 4000 2000" fill="currentColor">
+                            <g id="layer1">
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/>
+                            </g>
                         </svg>
                     </div>
                     <div className="flex md:hidden">
-                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 2000" fill="currentColor">
-                            <g id="layer1"><path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/></g>
+                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 4000 2000" fill="currentColor">
+                            <g id="layer1">
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/>
+                            </g>
                         </svg>
-                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 2000" fill="currentColor">
-                            <g id="layer1"><path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/><path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/><path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/><path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/></g>
+                        <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 4000 2000" fill="currentColor">
+                            <g id="layer1">
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,1500 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 0,2000 4000,0"/>
+                                <path stroke="currentColor" strokeWidth={2} d="M 0,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 1500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 2500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3000,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 3500,0 0,2000"/>
+                                <path stroke="currentColor" strokeWidth={2} d="m 4000,0 0,2000"/>
+                            </g>
                         </svg>
                     </div>
                 </div>
             </div>
 
-            <div className="w-screen h-full" style={{backgroundImage: "/assets/grid.svg"}}>
+            <div id="test" className="w-screen h-full" style={{backgroundImage: "/assets/grid.svg"}}>
 
 
                 <Header/>
 
 
-                {/*<div className='h-[25vh] '/>*/}
-
-
                 <MouseParallaxContainer
                     className="w-full h-[60vh] flex flex-col justify-center align-center"
-                    globalFactorX={0.2} globalFactorY={0}
+                    globalFactorX={0.2} globalFactorY={0.0}
                     resetOnLeave
                     inverted={true}>
 
-                    <MouseParallaxChild factorX={0.15} factorY={0}>
-                        <h1 className='text-fuchsia-400 text-center text-4xl font-bold'><i>Hey I'm</i></h1>
+                    <MouseParallaxChild factorX={0.15} factorY={0.15}>
+                        <AnimationOnScroll animateIn="animate__slideInDown">
+                            <h1 className='text-fuchsia-400 text-center text-4xl font-bold'><i>Hey I'm</i></h1>
+                        </AnimationOnScroll>
                     </MouseParallaxChild>
 
-                    <MouseParallaxChild factorX={0.1} factorY={0}>
-                        <h1 className='topic text-center text-8xl font-bold p-3'>Jonas</h1>
+                    <MouseParallaxChild factorX={0.1} factorY={0.1}>
+                        <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}>
+                            <h1 className='topic text-center text-8xl font-bold p-3'>Jonas</h1>
+                        </AnimationOnScroll>
                     </MouseParallaxChild>
 
                 </MouseParallaxContainer>
@@ -64,6 +131,8 @@ function Index() {
                 <br/>
                 <br/>
                 <br/>
+
+                <div className='h-[32.5vh]'/>
 
 
                 <div className='flex justify-around items-center py-3 md:px-16 lg:px-32 xl:px-64'>
@@ -87,6 +156,22 @@ function Index() {
                                       </svg>}/>
 
                 </div>
+
+                <AnimationOnScroll animateIn="animate__fadeInLeft">
+                    <h2 className="text text-center">Look what i am doing</h2>
+                </AnimationOnScroll>
+
+                <AnimationOnScroll animateIn="animate__fadeInLeft">
+                    <h5 className="text text-center">Look me too.</h5>
+                </AnimationOnScroll>
+
+                <AnimationOnScroll animateIn="animate__fadeInLeft">
+                    <h5 className="text text-center">Look me too.</h5>
+                </AnimationOnScroll>
+
+                <AnimationOnScroll animateIn="animate__fadeInLeft">
+                    <h5 className="text text-center">Look me too.</h5>
+                </AnimationOnScroll>
 
                 <div className='h-[32.5vh]'/>
                 <Footer/>
