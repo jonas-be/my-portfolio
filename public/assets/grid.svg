@@ -1,0 +1,25 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="4000"
+        height="2000"
+        viewBox="0 0 4000 2000"
+        version="1.1"
+        fill="currentColor">
+    <defs id="defs4"/>
+    <g id="layer1">
+        <path stroke="currentColor" d="M 0,0 4000,0"/>
+        <path stroke="currentColor" d="m 0,500 4000,0"/>
+        <path stroke="currentColor" d="m 0,1000 4000,0"/>
+        <path stroke="currentColor" d="m 0,1500 4000,0"/>
+        <path stroke="currentColor" d="m 0,2000 4000,0"/>
+        <path stroke="currentColor" d="M 0,0 0,2000"/>
+        <path stroke="currentColor" d="m 500,0 0,2000"/>
+        <path stroke="currentColor" d="m 1000,0 0,2000"/>
+        <path stroke="currentColor" d="m 1500,0 0,2000"/>
+        <path stroke="currentColor" d="m 2000,0 0,2000"/>
+        <path stroke="currentColor" d="m 2500,0 0,2000"/>
+        <path stroke="currentColor" d="m 3000,0 0,2000"/>
+        <path stroke="currentColor" d="m 3500,0 0,2000"/>
+        <path stroke="currentColor" d="m 4000,0 0,2000"/>
+    </g>
+</svg>

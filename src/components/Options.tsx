@@ -19,7 +19,7 @@ function Options() {
     return (
         <>
             <button onClick={toggleDropdown} id="drawer"
-                    className="sm:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-costum-gray-500 rounded-2xl text-sm p-2.5">
+                    className="sm:hidden text-gray-500 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900/60 backdrop-blur-[.9px] rounded-2xl text-sm p-2.5">
                 <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                      fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                      className="feather feather-menu">
@@ -34,7 +34,7 @@ function Options() {
                  className='w-full sm:w-auto h-full fixed hidden sm:static sm:inline-block'>
 
                 <div
-                    className='fixed top-14 right-3 bg-white dark:bg-zinc-900 shadow-md sm:shadow-none sm:bg-zinc-200 rounded-2xl sm:static sm:flex flex-col sm:flex-row '>
+                    className='fixed top-14 right-3 bg-white/60 dark:bg-zinc-900/60 shadow-md sm:shadow-none sm:bg-zinc-200/60 rounded-2xl sm:static sm:flex flex-col sm:flex-row backdrop-blur-[.9px]'>
                     <DarkModeToggle/>
 
                     <OptionLinkButton link="https://github.com/jonas-be"
