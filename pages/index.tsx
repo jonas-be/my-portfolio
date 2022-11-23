@@ -6,6 +6,7 @@ import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 import BackgroundGrid from "../src/components/BackgroundGrid";
+import ServicesUpCard from "../src/components/ServicesUpCard";
 
 function Index() {
 
@@ -38,6 +39,11 @@ function Index() {
                     </MouseParallaxChild>
 
                 </MouseParallaxContainer>
+
+                <div className="flex justify-around items-center">
+                    <ServicesUpCard/>
+                </div>
+
 
 
                 <br/>
