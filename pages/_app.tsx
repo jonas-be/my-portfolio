@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import './styles.css'
+import '../styles/globals.css'
+import type {AppProps} from 'next/app'
+import {useEffect} from "react";
 
-export default ({Component, pageProps}: { Component: any, pageProps: any }) => {
-
+export default function App({Component, pageProps}: AppProps) {
     useEffect(() => {
         checkDarkModeOnStart()
     }, []);
@@ -20,16 +20,5 @@ export default ({Component, pageProps}: { Component: any, pageProps: any }) => {
         }
     }
 
-    return (
-        <>
-            <Component {...pageProps} />
-        </>
-    );
-};
-
-
-import Head from "next/head";
-
-
-
-
+    return <Component {...pageProps} />
+}
