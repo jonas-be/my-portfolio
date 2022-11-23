@@ -20,7 +20,7 @@ function Options() {
             <button onClick={toggleDropdown} id="drawer"
                     className="sm:hidden text-gray-500 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900/60 backdrop-blur-[.9px] rounded-2xl text-sm p-2.5">
                 <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
                      className="feather feather-menu">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
