@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inter:wght@200;400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+  .background {
+    @apply
+    bg-white
+  }
+
+  .topic {
+    @apply
+    font-semibold
+    text-zinc-700 dark:text-white
+  }
+
+  .text {
+    @apply
+    text-zinc-500 dark:text-zinc-400
+  }
+}
+
+#__next {
+  @apply
+    w-full
+    h-full
+  min-h-[100vh]
+  bg-white dark:bg-black
+}
+
+.dela-gothi-one {
+  font-family: 'Dela Gothic One', cursive;
+}
+
+body {
+
+  padding: 0;
+  margin: 0;
+  overflow: overlay;
+  font-family: 'Inter', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar-track
+{
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb
+{
+  @apply
+    bg-zinc-400 dark:bg-zinc-700
+    rounded-full
+}
