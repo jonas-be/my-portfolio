@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type {NextApiRequest, NextApiResponse} from 'next'
 
 type Data = {
@@ -18,7 +17,7 @@ export default async function handler(
     // @ts-ignore
     const regexResult = [...data.matchAll(expression)]
     regexResult.forEach(r => {
-        monitorUrls.push(r[0].slice(0,-1))
+        monitorUrls.push("/api/text-fetch-proxy?test=" + r[0].slice(0,-1))
     })
 
     res.status(200).json({monitorUrls: monitorUrls})

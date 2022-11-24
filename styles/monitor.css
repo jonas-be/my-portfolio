@@ -1,0 +1,21 @@
+.status-page__resource-ticks {
+    @apply
+    flex w-full h-full
+}
+
+.status-page__resource-tick {
+    @apply
+    h-full w-full p-[1px]
+}
+
+.status-page__resource-tick-inner {
+    @apply
+    h-12 w-8 w-full rounded bg-zinc-500
+}
+
+
+.status-page__resource-name {
+    @apply
+    text
+}
+
