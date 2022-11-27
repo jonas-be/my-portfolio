@@ -6,9 +6,9 @@
 
 @layer components {
 
-  .background {
+  .accent-background {
     @apply
-    bg-white
+    bg-zinc-200/60 dark:bg-zinc-800/60
   }
 
   .topic {

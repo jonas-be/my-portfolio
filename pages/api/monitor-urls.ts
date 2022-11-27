@@ -1,12 +1,12 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 
-type Data = {
+export type MonitorUrlsResponse = {
     monitorUrls: string[]
 }
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse<MonitorUrlsResponse>
 ) {
     const response = await fetch("https://monitor.jonasbe.de/")
     const data: string = await response.text()
@@ -17,7 +17,7 @@ export default async function handler(
     // @ts-ignore
     const regexResult = [...data.matchAll(expression)]
     regexResult.forEach(r => {
-        monitorUrls.push("/api/text-fetch-proxy?test=" + r[0].slice(0,-1))
+        monitorUrls.push("/api/single-monitor?url=" + r[0].slice(0,-1))
     })
 
     res.status(200).json({monitorUrls: monitorUrls})
