@@ -1,0 +1,25 @@
+name: Docker Build & Push
+
+on:
+  push:
+    branches: [ "stage" ]
+  merge_group:
+    branches: [ "stage" ]
+
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v3
+        name: Build & push Docker image
+        with:
+          image: jonasbe25/my-portfolio
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
