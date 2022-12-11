@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <footer className='p-3 sm:p-6'>
-        <div className="bg-zinc-200 dark:bg-zinc-900 rounded-2xl">
+        <div className="bg-accent-content rounded-5xl">
       <h3 className='topic text-xl text-center p-3'>End of the Site</h3>
 
       <a href='https://github.com/jonas-be' className='flex flex-row justify-center items-center text font-medium text-lg p-1'>
