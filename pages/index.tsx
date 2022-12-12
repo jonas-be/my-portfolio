@@ -5,8 +5,6 @@ import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 import BackgroundGrid from "../src/components/BackgroundGrid";
-import {IoGlobe, IoLogoGithub, IoMoon, IoSunny} from "react-icons/io5";
-import {FaDiscord} from "react-icons/fa";
 
 function Index() {
 
@@ -19,9 +17,6 @@ function Index() {
                  style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"}}>
 
                 <Header/>
-
-
-
 
 
                 <MouseParallaxContainer

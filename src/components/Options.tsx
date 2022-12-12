@@ -20,7 +20,7 @@ function Options() {
     return (
         <>
             <button onClick={toggleDropdown} id="drawer"
-                    className="sm:hidden text-gray-500 dark:text-zinc-400 hover:bg-zinc-200/60 dark:hover:bg-zinc-900/60 backdrop-blur-[.9px] rounded-2xl text-sm p-2.5">
+                    className="sm:hidden text-gray-500 dark:text-zinc-400 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-[.9px] hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 rounded-2xl text-sm p-2.5">
                 <IoMenu className="text-2xl"/>
             </button>
 
