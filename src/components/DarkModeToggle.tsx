@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import {IoMoon, IoSunny} from "react-icons/io5";
 
 function DarkModeToggle() {
@@ -13,6 +13,7 @@ function DarkModeToggle() {
                 return false
             }
         }
+
         setDarkModeIcon(isDarkModeEnabled())
     }, [])
 
@@ -35,14 +36,22 @@ function DarkModeToggle() {
     }
 
     function setDarkMode(dark: boolean) {
+        const el = document.getElementById('background')
         if (dark) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-            setDarkModeIcon(true)
+            if (el !== null) el!.style.animation = "toDark .25s ease-in-out 1";
+            setTimeout(function () {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                setDarkModeIcon(true)
+            }, 50);
         } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-            setDarkModeIcon(false)
+            if (el !== null) el!.style.animation = "toLight .25s ease-in-out 1";
+            setTimeout(function () {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                setDarkModeIcon(false)
+            }, 50);
+
         }
     }
 

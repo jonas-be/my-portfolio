@@ -20,7 +20,7 @@ function Options() {
     return (
         <>
             <button onClick={toggleDropdown} id="drawer"
-                    className="sm:hidden text-gray-500 dark:text-zinc-400 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-[.9px] hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 rounded-2xl text-sm p-2.5">
+                    className="sm:hidden text-gray-500 dark:text-zinc-400 bg-accent-content-darker hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 rounded-2xl text-sm p-2.5">
                 <IoMenu className="text-2xl"/>
             </button>
 
@@ -29,7 +29,7 @@ function Options() {
                  className='w-full sm:w-auto h-full fixed hidden sm:static sm:inline-block'>
 
                 <div
-                    className='fixed top-14 right-3 bg-white/60 sm:bg-zinc-200/60 dark:bg-zinc-900/60 shadow-md sm:shadow-none rounded-2xl sm:static sm:flex flex-col sm:flex-row backdrop-blur-[.9px]'>
+                    className='fixed top-14 right-3 bg-accent-content-darker shadow-md sm:shadow-none rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
                     <DarkModeToggle/>
 
                     <OptionLinkButton link="https://github.com/jonas-be"

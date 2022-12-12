@@ -9,7 +9,7 @@ import BackgroundGrid from "../src/components/BackgroundGrid";
 function Index() {
 
     return (
-        <div className="w-full h-full">
+        <div id="background" className="w-full h-full">
 
             <BackgroundGrid/>
 
