@@ -1,14 +1,14 @@
 import Header from "../src/components/Header";
-import OptionLinkButton from "../src/components/OptionLinkButton";
 import Footer from "../src/components/Footer";
 import {MouseParallaxChild, MouseParallaxContainer} from "react-parallax-mouse";
 import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 import BackgroundGrid from "../src/components/BackgroundGrid";
+import {IoGlobe, IoLogoGithub, IoMoon, IoSunny} from "react-icons/io5";
+import {FaDiscord} from "react-icons/fa";
 
 function Index() {
-
 
     return (
         <div className="w-full h-full">
@@ -16,9 +16,13 @@ function Index() {
             <BackgroundGrid/>
 
             <div className="w-screen h-full"
-                 style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.25) 34%, rgba(45,49,131,.25) 51%, rgba(30,58,138,.25) 74%, rgba(232,121,240,.25) 100%)"}}>
+                 style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"}}>
 
                 <Header/>
+
+
+
+
 
                 <MouseParallaxContainer
                     className="w-full h-[60vh] flex flex-col justify-center align-center"
@@ -41,12 +45,23 @@ function Index() {
                 </MouseParallaxContainer>
 
 
+                <div
+                    className="flex flex-col xl:flex-row xl:gap-20 justify-center items-center xl:items-start xl:justify-center">
 
-                <div className='h-[10vh]'/>
+                    <div className="p-6">
+                        <h3 className="topic text-xl">Hello World,</h3>
+                        <p className="text pt-4">
+                            my name is Jonas. I'm located in Germany. <br/>
+                            I love to develop Back- and Frontend. And I'm also very interested in deploying and
+                            administrating software.<br/>
+                            At the moment
 
-                <AnimationOnScroll animateIn="animate__fadeInUp">
-                    <div className="flex justify-center">
-                        <div className="bg-primary-content p-6 sm:p-8 rounded-5xl">
+
+                        </p>
+                    </div>
+
+                    <AnimationOnScroll animateIn="animate__fadeInUp">
+                        <div className="bg-accent-content w-fit p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
                             <table className="max-w-sm">
                                 <caption className="topic text-lg pb-6">About me</caption>
                                 <tbody>
@@ -68,11 +83,9 @@ function Index() {
                                 </tr>
                                 </tbody>
                             </table>
-
-
                         </div>
-                    </div>
-                </AnimationOnScroll>
+                    </AnimationOnScroll>
+                </div>
 
 
                 <div className='h-[32.5vh]'/>
