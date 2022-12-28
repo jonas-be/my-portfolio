@@ -33,7 +33,7 @@ function Index() {
 
                     <MouseParallaxChild factorX={0.1} factorY={0.1}>
                         <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}>
-                            <h1 className='topic text-center text-8xl font-bold p-3'>Jonas</h1>
+                            <h1 className='topic text-center text-8xl font-bold p-3'>Jonas-be</h1>
                         </AnimationOnScroll>
                     </MouseParallaxChild>
 
