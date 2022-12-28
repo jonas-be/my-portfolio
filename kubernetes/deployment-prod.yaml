@@ -1,23 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jonas-portfolio-stage
+  name: jonas-portfolio-prod
   labels:
-    app: web-app
+    app: my-portfolio-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-app
+      app: my-portfolio-prod
   template:
     metadata:
       labels:
-        app: web-app
+        app: my-portfolio-prod
     spec:
       containers:
         - name: my-portfolio
           image: jonasbe25/my-portfolio
-      ports:
-        - protocol: TCP
-          port: 3000
-          targetPort: 31500
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jonas-portfolio-prod-entrypoint
+spec:
+  type: NodePort
+  selector:
+    app: my-portfolio-prod
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 31500

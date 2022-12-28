@@ -49,3 +49,4 @@ jobs:
       - name: Deploy to cluster
         run: |
           kubectl apply -f kubernetes/deployment-stage.yaml
+          kubectl rollout restart deployment jonas-portfolio-stage
