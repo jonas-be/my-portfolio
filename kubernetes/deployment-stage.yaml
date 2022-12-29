@@ -17,6 +17,7 @@ spec:
       containers:
         - name: my-portfolio
           image: jonasbe25/my-portfolio:stage
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
 ---
