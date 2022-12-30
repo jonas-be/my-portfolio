@@ -36,7 +36,7 @@ function DarkModeToggle() {
     }
 
     function setDarkMode(dark: boolean) {
-        const el = document.getElementById('background')
+        const el = document.getElementById('__next')
         if (dark) {
             if (el !== null) el!.style.animation = "toDark .25s ease-in-out 1";
             setTimeout(function () {
