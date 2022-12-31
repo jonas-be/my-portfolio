@@ -7,6 +7,41 @@
 
 @layer components {
 
+    .text-accent {
+        @apply
+        text-black dark:text-white
+    }
+
+    .text-accent-reverse {
+        @apply
+        text-white dark:text-black
+    }
+
+    .text {
+        @apply
+        text-zinc-600 dark:text-zinc-400
+    }
+
+    .bg {
+        @apply
+        bg-white dark:bg-black
+    }
+
+    .bg-accent {
+        @apply
+        bg-zinc-200/80 dark:bg-zinc-800/80
+    }
+
+    .bg-accent-2 {
+        @apply
+        bg-zinc-300/80 dark:bg-zinc-900/80
+    }
+
+    .bg-reverse {
+        @apply
+        bg-black dark:bg-white
+    }
+
     .bg-accent-content-darker {
         @apply
         bg-zinc-100/60 dark:bg-zinc-900/60
@@ -21,20 +56,10 @@
         border border-[.2px] border-zinc-100/30 dark:border-zinc-900/30
     }
 
-    .topic {
-        @apply
-        font-semibold
-        text-black dark:text-white
-    }
-
-    .text {
-        @apply
-        text-zinc-600 dark:text-zinc-400
-    }
 
     .focus-ring {
         @apply
-        focus:outline-none focus-visible:ring focus-visible:ring-opacity-75
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75
         focus-visible:ring-black dark:focus-visible:ring-white
     }
 
@@ -44,8 +69,8 @@
         text-white font-medium
         active/edit:scale-95 active/edit:opacity-100 hover/edit:opacity-90 hover/edit:-translate-y-[0.05rem]
         focus-ring
-        rounded-xl text-sm px-4 py-2 m-1
-        flex justify-start gap-1 items-center
+        rounded-xl text-sm px-4 py-2
+        flex justify-center gap-1 items-center
     }
 
     .btn-xs {
@@ -67,6 +92,12 @@
         @apply
         border-2
         bg-transparent
+    }
+
+    /*Link*/
+    .link {
+        @apply
+        hover:opacity-70 rounded focus-ring underline
     }
 }
 

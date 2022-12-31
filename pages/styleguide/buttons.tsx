@@ -3,6 +3,7 @@ import Header from "../../src/components/Header";
 import Footer from "../../src/components/Footer";
 import StyleGuideComponent from "../../src/components/common/StyleGuideComponent";
 import {IoSunny} from "react-icons/io5";
+import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 
 function Index() {
 
@@ -10,6 +11,9 @@ function Index() {
     return (
         <>
             <Header/>
+            <div className="w-full flex justify-center">
+                <BreadcrumbNavigation url={["buttons"]}/>
+            </div>
             <div className="flex justify-center">
                 <div className="w-full md:w-11/12 lg:w-10/12 xl:w-9/12">
 

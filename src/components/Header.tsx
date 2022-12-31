@@ -11,7 +11,7 @@ function Header() {
              z-50" >
 
                 <Link href={"/"}  className="bg-accent-content-darker hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 rounded-2xl p-2.5 flex justify-center items-center">
-                    <h1 className='topic text-xl cursor-pointer h-6 flex justify-center items-center'>Jonas</h1>
+                    <h1 className='text-accent text-xl cursor-pointer h-6 flex justify-center items-center'>Jonas</h1>
                 </Link>
 
                 <Options />

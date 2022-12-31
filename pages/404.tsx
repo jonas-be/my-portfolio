@@ -13,7 +13,7 @@ function Error() {
 
 
                 <IoWarning className="text-red-500 text-6xl"/>
-                <h1 className='text-6xl font-bold topic'>404</h1>
+                <h1 className='text-6xl font-bold text-accent'>404</h1>
                 <div className="p-1">
                     <div className="w-32 h-0.5 bg-zinc-500 dark:bg-zinc-400 rounded-full " />
                 </div>

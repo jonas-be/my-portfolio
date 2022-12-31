@@ -1,6 +1,7 @@
 import React from 'react';
 import {Disclosure} from "@headlessui/react";
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
+// @ts-ignore
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import CodeStyle from "./CodeStyle";
 
@@ -9,7 +10,7 @@ const StyleGuideComponent = ({children, title, code}: any) => {
 
     return (
         <div className="border-2 rounded-2xl border-gray-400 m-4 bg-accent-content overflow-hidden">
-            <h3 className="topic px-4 py-2">{title}</h3>
+            <h3 className="text-accent px-4 py-2">{title}</h3>
             <div className="p-4 flex justify-center items-center ">
                 {children}
             </div>
