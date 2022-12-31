@@ -9,17 +9,17 @@ import CodeStyle from "./CodeStyle";
 const StyleGuideComponent = ({children, title, code}: any) => {
 
     return (
-        <div className="border-2 rounded-2xl border-gray-400 m-4 bg-accent-content overflow-hidden">
-            <h3 className="text-accent px-4 py-2">{title}</h3>
-            <div className="p-4 flex justify-center items-center ">
+        <div className="rounded-2xl m-4 bg-accent overflow-hidden shadow">
+            <h3 className="text-accent font-bold px-4 py-2">{title}</h3>
+            <div className="p-4 flex justify-center items-center gap-2">
                 {children}
             </div>
-            <div className="bg-accent-content-darker rounded-xl ">
+            <div className="bg-accent-2 rounded-2xl ">
                 <Disclosure>
                     {({open}) => (
                         <>
                             <Disclosure.Button
-                                className="flex w-full justify-between items-center rounded-xl px-4 py-2 text-left font-bold text-sm text-white focus-ring focus-visible:ring-2">
+                                className="flex w-full justify-between items-center rounded-xl px-4 py-2 text-accent text-sm text-left font-semibold focus-ring">
                                 <span>Code</span>
                                 {open ?
                                     <IoIosArrowUp/>

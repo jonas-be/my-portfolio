@@ -3,7 +3,7 @@ export default {
         "display": "block",
         "overflowX": "auto",
         "padding": "0.5em",
-        "color": "#c0c0c4",
+        "color": "#8c8c93",
         "background": "rgba(0,0,0,0)"
     },
     "hljs-comment": {
@@ -24,67 +24,67 @@ export default {
         "color": "#c678dd"
     },
     "hljs-section": {
-        "color": "#e06c75"
+        "color": "rgb(219 39 119)"
     },
     "hljs-name": {
-        "color": "#e06c75"
+        "color": "rgb(219 39 119)"
     },
     "hljs-selector-tag": {
-        "color": "#e06c75"
+        "color": "rgb(219 39 119)"
     },
     "hljs-deletion": {
-        "color": "#e06c75"
+        "color": "rgb(219 39 119)"
     },
     "hljs-subst": {
-        "color": "#e06c75"
+        "color": "rgb(219 39 119)"
     },
     "hljs-literal": {
-        "color": "#56b6c2"
+        "color": "rgb(20 184 166)"
     },
     "hljs-string": {
-        "color": "#98c379"
+        "color": "rgb(34 197 94)"
     },
     "hljs-regexp": {
-        "color": "#98c379"
+        "color": "rgb(34 197 94)"
     },
     "hljs-addition": {
-        "color": "#98c379"
+        "color": "rgb(34 197 94)"
     },
     "hljs-attribute": {
-        "color": "#98c379"
+        "color": "rgb(34 197 94)"
     },
     "hljs-meta-string": {
-        "color": "#98c379"
+        "color": "rgb(34 197 94)"
     },
     "hljs-built_in": {
-        "color": "#e6c07b"
+        "color": "rgb(250 204 21)"
     },
     "hljs-class .hljs-title": {
-        "color": "#e6c07b"
+        "color": "rgb(250 204 21)"
     },
     "hljs-attr": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-variable": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-template-variable": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-type": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-selector-class": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-selector-attr": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-selector-pseudo": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-number": {
-        "color": "#d19a66"
+        "color": "rgb(202 138 4)"
     },
     "hljs-symbol": {
         "color": "#61aeee"

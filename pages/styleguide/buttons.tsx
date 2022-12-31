@@ -50,13 +50,13 @@ function Index() {
                     </StyleGuideComponent>
 
                     <StyleGuideComponent title="Button Sizes" code={`
-<button type="button" className="btn bg-primary btn-xs">Small XS</button>
-<button type="button" className="btn bg-primary btn-sm">Small SM</button>
+<button type="button" className="btn bg-primary btn-xs">XS</button>
+<button type="button" className="btn bg-primary btn-sm">SM</button>
 <button type="button" className="btn bg-primary">Default</button>
 <button type="button" className="btn bg-primary btn-lg">Large</button>
             `}>
-                        <button type="button" className="btn bg-primary btn-xs">Small XS</button>
-                        <button type="button" className="btn bg-primary btn-sm">Small SM</button>
+                        <button type="button" className="btn bg-primary btn-xs">XS</button>
+                        <button type="button" className="btn bg-primary btn-sm">SM</button>
                         <button type="button" className="btn bg-primary">Default</button>
                         <button type="button" className="btn bg-primary btn-lg">Large</button>
                     </StyleGuideComponent>
