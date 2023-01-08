@@ -7,6 +7,10 @@
 
 @layer components {
 
+
+
+    /* Text Colors */
+
     .text-accent {
         @apply
         text-black dark:text-white
@@ -22,6 +26,10 @@
         text-zinc-600 dark:text-zinc-400
     }
 
+
+
+    /* Background Colors */
+
     .bg {
         @apply
         bg-white dark:bg-black
@@ -29,12 +37,12 @@
 
     .bg-accent {
         @apply
-        bg-zinc-100/90 dark:bg-zinc-800/90
+        bg-zinc-100/90 dark:bg-zinc-800/90 backdrop-blur-[1.25px]
     }
 
     .bg-accent-2 {
         @apply
-        bg-zinc-200/90 dark:bg-zinc-900/90
+        bg-zinc-200/90 dark:bg-zinc-900/90 backdrop-blur-[1.25px]
     }
 
     .bg-reverse {
@@ -42,20 +50,9 @@
         bg-black dark:bg-white
     }
 
-    .bg-accent-content-darker {
-        @apply
-        bg-zinc-100/60 dark:bg-zinc-900/60
-        backdrop-blur-[1.25px]
-        border border-[.1px] border-zinc-100/80 dark:border-zinc-900/80
-    }
 
-    .bg-accent-content {
-        @apply
-        bg-zinc-200/40 dark:bg-zinc-900/40
-        backdrop-blur-lg
-        border border-[.2px] border-zinc-100/30 dark:border-zinc-900/30
-    }
 
+    /* Utils */
 
     .focus-ring {
         @apply
@@ -63,11 +60,14 @@
         focus-visible:ring-black dark:focus-visible:ring-white
     }
 
+
+
     /* Button */
+
     .btn {
         @apply
         text-white font-medium
-        active/edit:scale-95 active/edit:opacity-100 hover/edit:opacity-90 hover/edit:-translate-y-[0.05rem]
+        active/edit:scale-95 active/edit:opacity-100 hover/edit:opacity-70 duration-150
         focus-ring
         rounded-xl text-sm px-4 py-2
         flex justify-center gap-1 items-center
@@ -94,7 +94,10 @@
         bg-transparent
     }
 
-    /*Link*/
+
+
+    /* Link */
+
     .link {
         @apply
         hover:opacity-70 rounded focus-ring underline
