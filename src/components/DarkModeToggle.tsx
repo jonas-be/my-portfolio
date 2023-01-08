@@ -36,7 +36,7 @@ function DarkModeToggle() {
     }
 
     function setDarkMode(dark: boolean) {
-        const el = document.getElementById('background')
+        const el = document.getElementById('__next')
         if (dark) {
             if (el !== null) el!.style.animation = "toDark .25s ease-in-out 1";
             setTimeout(function () {
@@ -59,12 +59,12 @@ function DarkModeToggle() {
     return (
         <button
             onClick={toggleDarkMode}
-            className="flex justify-center items-center text hover:bg-zinc-300/60 dark:hover:bg-zinc-800/60 rounded-2xl text-sm p-2.5"
+            className="btn p-2.5 flex justify-center items-center"
         >
             {!darkModeIcon ?
-                <IoSunny className="text-2xl"/>
+                <IoSunny className="text-2xl text"/>
                 :
-                <IoMoon className="text-2xl"/>
+                <IoMoon className="text-2xl text"/>
             }
         </button>
     )

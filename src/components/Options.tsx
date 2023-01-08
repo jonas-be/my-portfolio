@@ -20,8 +20,8 @@ function Options() {
     return (
         <>
             <button onClick={toggleDropdown} id="drawer"
-                    className="sm:hidden text-gray-500 dark:text-zinc-400 bg-accent-content-darker hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 rounded-2xl text-sm p-2.5">
-                <IoMenu className="text-2xl"/>
+                    className="sm:hidden btn bg-accent-2 shadow-md text-sm p-2.5">
+                <IoMenu className="text-2xl text"/>
             </button>
 
 
@@ -29,13 +29,13 @@ function Options() {
                  className='w-full sm:w-auto h-full fixed hidden sm:static sm:inline-block'>
 
                 <div
-                    className='fixed top-14 right-3 bg-accent-content-darker shadow-md sm:shadow-none rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
+                    className='fixed top-14 right-3 bg-accent-2 shadow-md rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
                     <DarkModeToggle/>
 
                     <OptionLinkButton link="https://github.com/jonas-be"
-                                      icon={<FaGithub className="text-2xl"/>}/>
+                                      icon={<FaGithub className="text-2xl text"/>}/>
                     <OptionLinkButton link="https://discord.gg/EbFsEQbB7J"
-                                      icon={<FaDiscord className="text-2xl"/>}/>
+                                      icon={<FaDiscord className="text-2xl text"/>}/>
                 </div>
             </div>
         </>

@@ -7,29 +7,100 @@
 
 @layer components {
 
-    .bg-accent-content-darker {
-        @apply
-        bg-zinc-100/60 dark:bg-zinc-900/60
-        backdrop-blur-[1.25px]
-        border border-[.1px] border-zinc-100/80 dark:border-zinc-900/80
-    }
 
-    .bg-accent-content {
-        @apply
-        bg-zinc-200/40 dark:bg-zinc-900/40
-        backdrop-blur-lg
-        border border-[.2px] border-zinc-100/30 dark:border-zinc-900/30
-    }
 
-    .topic {
+    /* Text Colors */
+
+    .text-accent {
         @apply
-        font-semibold
         text-black dark:text-white
+    }
+
+    .text-accent-reverse {
+        @apply
+        text-white dark:text-black
     }
 
     .text {
         @apply
         text-zinc-600 dark:text-zinc-400
+    }
+
+
+
+    /* Background Colors */
+
+    .bg {
+        @apply
+        bg-white dark:bg-black
+    }
+
+    .bg-accent {
+        @apply
+        bg-zinc-100/90 dark:bg-zinc-800/90 backdrop-blur-[1.25px]
+    }
+
+    .bg-accent-2 {
+        @apply
+        bg-zinc-200/90 dark:bg-zinc-900/90 backdrop-blur-[1.25px]
+    }
+
+    .bg-reverse {
+        @apply
+        bg-black dark:bg-white
+    }
+
+
+
+    /* Utils */
+
+    .focus-ring {
+        @apply
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75
+        focus-visible:ring-black dark:focus-visible:ring-white
+    }
+
+
+
+    /* Button */
+
+    .btn {
+        @apply
+        text-white font-medium
+        active/edit:scale-95 active/edit:opacity-100 hover/edit:opacity-70 duration-150
+        focus-ring
+        rounded-xl text-sm px-4 py-2
+        flex justify-center gap-1 items-center
+    }
+
+    .btn-xs {
+        @apply
+        rounded-full px-2 py-1 text-xs
+    }
+
+    .btn-sm {
+        @apply
+        rounded-xl px-4 py-2 text-xs
+    }
+
+    .btn-lg {
+        @apply
+        rounded-xl text-sm px-6 py-2.5
+    }
+
+    .btn-bordered {
+        @apply
+        border-2
+        bg-transparent
+    }
+
+
+
+    /* Link */
+
+    .link {
+        @apply
+        hover:opacity-70 rounded focus-ring underline
     }
 }
 
@@ -46,7 +117,6 @@
 }
 
 body {
-
     padding: 0;
     margin: 0;
     overflow: overlay;
@@ -78,22 +148,21 @@ code {
 }
 
 
-
 @keyframes toDark {
     0% {
-        background-color: rgba(255,255,255);
+        background-color: rgba(255, 255, 255);
     }
     100% {
-        background-color: rgba(0,0,0);
+        background-color: rgba(0, 0, 0);
     }
 }
 
 
 @keyframes toLight {
     0% {
-        background-color: rgba(0,0,0);
+        background-color: rgba(0, 0, 0);
     }
     100% {
-        background-color: rgba(255,255,255);
+        background-color: rgba(255, 255, 255);
     }
 }
