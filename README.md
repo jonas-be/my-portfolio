@@ -7,8 +7,8 @@
 
 ## Deployment
 
-The deployment runs with GitHub Actions
-First it's going to create a Docker Container and push it to DockerHub.
+The deployment runs with GitHub Actions.<br>
+First it's going to create a Docker Container and push it to [DockerHub](https://hub.docker.com/r/jonasbe25/my-portfolio).
 After that it will redeploy on Kubernetes.
 
 #### Branches
