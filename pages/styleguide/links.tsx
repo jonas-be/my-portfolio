@@ -13,7 +13,7 @@ function Index() {
         <>
             <Header/>
             <div className="w-full flex justify-center">
-                <BreadcrumbNavigation url={["buttons"]}/>
+                <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={["links"]}/>
             </div>
             <div className="flex justify-center">
                 <div className="w-full md:w-11/12 lg:w-10/12 xl:w-9/12">

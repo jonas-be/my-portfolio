@@ -11,7 +11,7 @@ function Index() {
         <>
             <Header/>
             <div className="w-full flex flex-col items-center justify-center">
-                <BreadcrumbNavigation url={[]}/>
+                <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={[]}/>
 
                 {/*<ul className="p-4">*/}
                 {/*    <li className="flex items-center link text-secondary"><HiChevronDoubleRight/><Link*/}
