@@ -33,7 +33,7 @@ function Index() {
 
                     <MouseParallaxChild factorX={0.1} factorY={0.1}>
                         <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}>
-                            <h1 className='text-accent text-center text-8xl font-bold p-3'>Jonas-be</h1>
+                            <h1 className='text-accent text-center text-8xl font-bold p-3'>Jonas</h1>
                         </AnimationOnScroll>
                     </MouseParallaxChild>
 
@@ -47,7 +47,7 @@ function Index() {
                         <h3 className="text-accent font-bold text-xl">Hello World,</h3>
                         <p className="text pt-4">
                             my name is Jonas. I'm located in Germany. <br/>
-                            I love to develop Back- and Frontend. And I'm also very interested in deploying and
+                            I love to develop Front- and Backend. And I'm also very interested in deploying and
                             administrating software.<br/>
                             <br/>
                             Watch the <Link href="/styleguide" className="link text-info">Styleguide</Link>
@@ -73,7 +73,7 @@ function Index() {
                                 </tr>
                                 <tr>
                                     <td className="text-accent text-right py-4 pr-2 sm:pr-4">Job:</td>
-                                    <td className="text"><i>becoming a Software Developer</i></td>
+                                    <td className="text">Software Developer</td>
                                 </tr>
                                 </tbody>
                             </table>
