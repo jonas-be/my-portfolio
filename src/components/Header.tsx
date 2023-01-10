@@ -10,7 +10,7 @@ function Header() {
             flex justify-between items-center p-3 
              z-50" >
 
-                <Link href={"/"}  className="btn bg-accent-2 shadow-md">
+                <Link href={"/"}  className="btn bg-accent-2 shadow-md rounded-2xl">
                     <h1 className='text-accent font-bold text-lg'>Jonas</h1>
                 </Link>
 
