@@ -10,16 +10,14 @@ function Footer() {
 
                 <a href='https://github.com/jonas-be'
                    className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>
-                    <FaGithub className="text-2xl"/>
-                    <div className='w-2'/>
-                    Github
+                    <FaGithub className="text-2xl text"/>
+                    <div className="pl-2 text">Github</div>
                 </a>
 
                 <a href='https://discord.gg/EbFsEQbB7J'
                    className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>
-                    <FaDiscord className="text-2xl"/>
-                    <div className='w-2'/>
-                    Discord
+                    <FaDiscord className="text-2xl text"/>
+                    <div className="pl-2 text">Discord</div>
                 </a>
 
 
