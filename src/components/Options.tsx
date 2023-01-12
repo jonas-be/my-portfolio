@@ -32,9 +32,9 @@ function Options() {
                     className='fixed top-14 right-3 bg-accent-2 shadow-md rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
                     <DarkModeToggle/>
 
-                    <OptionLinkButton link="https://github.com/jonas-be"
+                    <OptionLinkButton link="https://github.com/jonas-be" label="Github"
                                       icon={<FaGithub className="text-2xl text"/>}/>
-                    <OptionLinkButton link="https://discord.gg/EbFsEQbB7J"
+                    <OptionLinkButton link="https://discord.gg/EbFsEQbB7J" label="Github"
                                       icon={<FaDiscord className="text-2xl text"/>}/>
                 </div>
             </div>

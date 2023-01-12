@@ -60,6 +60,7 @@ function DarkModeToggle() {
         <button
             onClick={toggleDarkMode}
             className="btn p-2.5 flex justify-center items-center"
+            title={!darkModeIcon ? "Enable light mode" : "Enable dark mode"}
         >
             {!darkModeIcon ?
                 <IoSunny className="text-2xl text"/>

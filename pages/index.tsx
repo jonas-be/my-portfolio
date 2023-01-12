@@ -25,17 +25,19 @@ function Index() {
                     resetOnLeave
                     inverted={true}>
 
+                    <h1>
                     <MouseParallaxChild factorX={0.15} factorY={0.15}>
-                        <AnimationOnScroll animateIn="animate__slideInDown">
-                            <h1 className='text-fuchsia-400 text-center text-4xl font-bold'><i>Hey I'm</i></h1>
+                        <AnimationOnScroll animateIn="animate__slideInDown" className='text-fuchsia-400 text-center text-4xl font-bold'>
+                            <i>Hey I'm</i>
                         </AnimationOnScroll>
                     </MouseParallaxChild>
 
                     <MouseParallaxChild factorX={0.1} factorY={0.1}>
-                        <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}>
-                            <h1 className='text-accent text-center text-8xl font-bold p-3'>Jonas</h1>
+                        <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true} className='text-accent text-center text-8xl font-bold p-3'>
+                            Jonas
                         </AnimationOnScroll>
                     </MouseParallaxChild>
+                    </h1>
 
                 </MouseParallaxContainer>
 
@@ -44,7 +46,7 @@ function Index() {
                     className="flex flex-col xl:flex-row xl:gap-20 justify-center items-center xl:items-start xl:justify-center">
 
                     <div className="p-6">
-                        <h3 className="text-accent font-bold text-xl">Hello World,</h3>
+                        <h2 className="text-accent font-bold text-xl">Hello World,</h2>
                         <p className="text pt-4">
                             my name is Jonas. I'm located in Germany. <br/>
                             I love to develop Front- and Backend. And I'm also very interested in deploying and

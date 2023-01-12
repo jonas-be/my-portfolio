@@ -11,7 +11,7 @@ function Header() {
              z-50" >
 
                 <Link href={"/"}  className="btn bg-accent-2 shadow-md rounded-2xl">
-                    <h1 className='text-accent font-bold text-lg'>Jonas</h1>
+                    <p className='text-accent font-bold text-lg'>Jonas</p>
                 </Link>
 
                 <Options />
