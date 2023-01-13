@@ -1,10 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
+import {FiCircle, FiX} from "react-icons/fi";
+import {AnimationOnScroll} from "react-animation-on-scroll";
 
 
 export const isBrowser = typeof window !== "undefined";
 export const ws = isBrowser ? new WebSocket('ws://localhost:8080') : null;
 const TicTacToeBoard = () => {
-
     const [board, setBoard] = useState(
         [
             [{id: "cell-0-0", value: ""}, {id: "cell-0-1", value: ""}, {id: "cell-0-2", value: ""}],
@@ -12,59 +13,50 @@ const TicTacToeBoard = () => {
             [{id: "cell-2-0", value: ""}, {id: "cell-2-1", value: ""}, {id: "cell-2-2", value: ""}]
         ]
     );
+    const [playerYou, setPlayerYou] = useState("");
+    const [turn, setTurn] = useState("");
+    const [winner, setWinner] = useState("");
 
-    // useEffect(() => console.log("re-render because board changed:", board), [board])
-
-    useEffect(() => {
-
-        if (ws !== null) {
-            // listen for messages from the server
-            ws.onmessage = function (event) {
-                const data = JSON.parse(event.data);
-
-                if (data.board !== undefined) {
-
-                    let boardTmp = board
-
-                    // update board with new game state
-                    for (let i = 0; i < 3; i++) {
-                        for (let j = 0; j < 3; j++) {
-                            boardTmp[i][j].value = data.board[i][j];
-                        }
-                    }
-                    setBoard(boardTmp)
-
-
-                    console.log(boardTmp)
-                    console.log(board)
-
-                    // TODO: update turn indicator
-                    // const turnEl = document.getElementById('turn');
-                    // turnEl.innerHTML = `Turn: ${data.turn}`;
-
-                    // TODO: display winner if game is over
-                    // const winnerEl = document.getElementById('winner');
-                    // if (data.winner) {
-                    //     winnerEl.innerHTML = `Winner: ${data.winner}`;
-                    // }
-                }
-            };
+    if (ws !== null) {
+        ws.onopen = function (event) {
+            console.log(event)
         }
-        return () => {
-            if (ws !== null) {
-                ws.close();
+
+        ws.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+
+            console.log(data)
+
+            if (data.board !== undefined) {
+                let boardTmp = [
+                    [{id: "cell-0-0", value: ""}, {id: "cell-0-1", value: ""}, {id: "cell-0-2", value: ""}],
+                    [{id: "cell-1-0", value: ""}, {id: "cell-1-1", value: ""}, {id: "cell-1-2", value: ""}],
+                    [{id: "cell-2-0", value: ""}, {id: "cell-2-1", value: ""}, {id: "cell-2-2", value: ""}]
+                ]
+
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        boardTmp[i][j].value = data.board[i][j];
+                    }
+                }
+                setBoard(boardTmp)
             }
+            if (data.turn !== undefined) {
+                setTurn(data.turn)
+            }
+            if (data.winner !== undefined) {
+                setWinner(data.winner)
+            }
+            if (data.playerYou !== undefined) {
+                setPlayerYou(data.playerYou)
+            }
+
+            console.log(turn, winner, playerYou)
         };
-    }, [ws?.onmessage])
-
-    function updateBoard(newBoard: any) {
-        setBoard(newBoard)
-
-        console.log(newBoard)
-        console.log(board)
     }
 
     function onClick(e: any) {
+        console.log(board)
         if (ws !== null) {
 
             const target = e.target
@@ -87,15 +79,44 @@ const TicTacToeBoard = () => {
 
     return (
         <div>
+            <p className="flex text">playerYou: {playerYou}</p>
+            <p className="flex text">turn: {turn}</p>
+            <p className="flex text">winner: {winner}</p>
+
             <table>
                 <caption className="text-accent text-lg pb-6">About me</caption>
                 <tbody>
                 {board.map(row =>
-                    <tr key={row.toString()}>
+                    <tr key={row[0].id.toString() + "-r"}>
+
                         {row.map(cell =>
                             <td key={cell.id} className="p-1">
-                                <button id={cell.id} onClick={onClick}
-                                        className="bg-accent rounded-3xl p-2 text-center w-20 h-20">{cell.value}</button>
+                                {cell.value === "x" ?
+                                    <AnimationOnScroll animateIn="animate__flash">
+                                        <button id={cell.id} onClick={onClick}
+                                                className={`btn bg-info/75 animate-pulse rounded-3xl p-2 flex justify-center items-center w-20 h-20`}>
+                                            <FiX className="text-info text-5xl"/>
+                                        </button>
+                                    </AnimationOnScroll>
+                                    : cell.value === "o" ?
+                                        <AnimationOnScroll animateIn="animate__flash">
+                                            <button id={cell.id} onClick={onClick}
+                                                    className={`btn bg-error/75 animate-pulse rounded-3xl p-2 flex justify-center items-center w-20 h-20`}>
+                                                <FiCircle className="text-error text-5xl"/>
+                                            </button>
+                                        </AnimationOnScroll>
+                                        :
+                                        <button id={cell.id} onClick={onClick}
+                                                className={`btn bg-accent rounded-3xl p-2 flex justify-center items-center w-20 h-20`}>
+                                            {cell.value === "X" ?
+                                                <FiX className="text-info text-5xl"/>
+                                                : cell.value === "O" ?
+                                                    <FiCircle className="text-error text-5xl"/>
+                                                    :
+                                                    ""
+                                            }
+                                        </button>
+                                }
                             </td>
                         )}
                     </tr>
