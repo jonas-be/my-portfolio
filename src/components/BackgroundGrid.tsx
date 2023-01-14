@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackgroundGrid = () => {
+const BackgroundGrid = ({className}: Props) => {
     return (
         <div className="absolute overflow-hidden"
              style={{
@@ -8,7 +8,7 @@ const BackgroundGrid = () => {
                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))"
              } as React.CSSProperties}
         >
-            <div className="flex flex-col items-center w-screen h-full text-violet-500">
+            <div className={`flex flex-col items-center w-screen h-full ${className}`}>
                 <div className="flex">
                     <svg className="w-[850px] md:w-[1250px]" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 4000 2000" fill="currentColor">
@@ -92,6 +92,10 @@ const BackgroundGrid = () => {
             </div>
         </div>
     );
+};
+
+type Props = {
+    className: string
 };
 
 export default BackgroundGrid;

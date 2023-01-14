@@ -12,7 +12,7 @@ function Index() {
     return (
         <div id="background" className="w-full h-full">
 
-            <BackgroundGrid/>
+            <BackgroundGrid className="text-primary"/>
 
             <div className="w-screen h-full"
                  style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"}}>
