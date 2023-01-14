@@ -104,10 +104,10 @@ const Index = () => {
                  style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"}}>
                 <Header/>
 
-                <div className="flex justify-center p-3 ">
+                <div className="flex justify-center">
                     <div className="flex bg-accent-2 shadow rounded-xl px-4 py-2 gap-2">
-                        <p className="text-accent text-lg font-bold">GameId:</p>
-                        <p className="text text-lg">{gameId}</p>
+                        <p className="text-accent font-bold">GameId:</p>
+                        <p className="text">{gameId}</p>
                     </div>
                 </div>
 
