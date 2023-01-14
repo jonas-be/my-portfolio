@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import TicTacToeBoard from "../../src/components/tictactoe/tictactoe-board";
 import TicTacToeIcon from "../../src/components/tictactoe/tictactoe-icon";
 import BackgroundGrid from "../../src/components/BackgroundGrid";
@@ -18,6 +18,8 @@ const Index = () => {
     const [playerYou, setPlayerYou] = useState("");
     const [turn, setTurn] = useState("");
     const [winner, setWinner] = useState("");
+    const [error, setError] = useState("");
+    const [gameId, setGameId] = useState("-");
 
     if (ws !== null) {
         ws.onmessage = function (event) {
@@ -48,9 +50,31 @@ const Index = () => {
             if (data.playerYou !== undefined) {
                 setPlayerYou(data.playerYou)
             }
+            if (data.error !== undefined) {
+                setError(data.error)
+            }
+            if (data.gameId !== undefined) {
+                setGameId(data.gameId)
+            }
         };
-        if (ws.readyState === 1) {
-            ws.send(JSON.stringify({"whoIam": "who"}))
+        // if (ws.readyState === 1) {
+        //     sendToWS(JSON.stringify({"whoIam": "who"}))
+        // }
+    }
+
+    useEffect(() => {
+        if (ws !== null && ws.readyState === 1) {
+            sendToWS(JSON.stringify({"whoIam": "who"}))
+        }
+    }, []);
+
+
+
+    function sendToWS(load: any) {
+        if (ws !== null && ws.readyState === 1) {
+            ws.send(load)
+        } else {
+            setError("WebSocket disconnected!")
         }
     }
 
@@ -62,7 +86,7 @@ const Index = () => {
             const row = parseInt(rowStr);
             const col = parseInt(colStr);
 
-            ws.send(JSON.stringify({row, col}));
+            sendToWS(JSON.stringify({row, col}));
         }
     }
 
@@ -80,19 +104,39 @@ const Index = () => {
                  style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"}}>
                 <Header/>
 
+                <div className="flex justify-center">
+                    <div className="flex bg-accent-2 shadow rounded-xl px-4 py-2 gap-2">
+                        <p className="text-accent font-bold">GameId:</p>
+                        <p className="text">{gameId}</p>
+                    </div>
+                </div>
 
                 <div className="flex justify-around w-full my-8">
-                    <p className="flex gap-2 font-bold text-accent text-xl items-center">You: <TicTacToeIcon
+                    <p className="flex gap-2 font-bold text-accent text-lg items-center">You: <TicTacToeIcon
                         player={playerYou}/></p>
-                    <p className="flex gap-2 font-bold text-accent text-xl items-center">Turn: <TicTacToeIcon
+                    <p className="flex gap-2 font-bold text-accent text-lg items-center">Turn: <TicTacToeIcon
                         player={turn}/></p>
-                    <p className="flex gap-2 font-bold text-accent text-xl items-center">Winner: <TicTacToeIcon
+                    <p className="flex gap-2 font-bold text-accent text-lg items-center">Winner: <TicTacToeIcon
                         player={winner}/></p>
                 </div>
                 <div className="flex justify-center p-10">
                     <TicTacToeBoard board={board} onClick={onClick}/>
                 </div>
 
+                <div>
+                    {winner !== null && winner !== "" ?
+                        <p className="flex justify-center items-center text-success text-xl font-bold">
+                            <TicTacToeIcon player={winner}/> has won!
+                        </p>
+                        :
+                        ""
+                    }
+                    {error !== "" ?
+                        <p className="text-center text-error text-xl font-bold animate-ping-in">{error}</p>
+                        :
+                        ""
+                    }
+                </div>
 
                 <div className='h-[36vh]'/>
                 <Footer/>
