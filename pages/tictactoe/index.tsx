@@ -81,7 +81,7 @@ const Index = () => {
                 <Header/>
 
 
-                <div className="flex justify-around w-full py-10">
+                <div className="flex justify-around w-full my-8">
                     <p className="flex gap-2 font-bold text-accent text-xl items-center">You: <TicTacToeIcon
                         player={playerYou}/></p>
                     <p className="flex gap-2 font-bold text-accent text-xl items-center">Turn: <TicTacToeIcon
@@ -97,7 +97,6 @@ const Index = () => {
                 <div className='h-[36vh]'/>
                 <Footer/>
             </div>
-
         </div>
     );
 };

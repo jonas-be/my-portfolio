@@ -8,20 +8,20 @@ const TicTacToeField = ({cell, onClick}: Props) => {
             {cell.value === "x" ?
                 <AnimationOnScroll animateIn="animate__rotateIn">
                     <button id={cell.id} onClick={onClick}
-                            className={`btn bg-info/75 animate-pulse rounded-4xl p-2 flex justify-center items-center w-24 h-24`}>
+                            className={`btn shadow-xl bg-info/75 animate-pulse rounded-4xl p-2 flex justify-center items-center w-24 sm:w-28 h-24 sm:h-28`}>
                         <TicTacToeIcon player={cell.value}/>
                     </button>
                 </AnimationOnScroll>
                 : cell.value === "o" ?
                     <AnimationOnScroll animateIn="animate__rotateIn">
                         <button id={cell.id} onClick={onClick}
-                                className={`btn bg-error/75 animate-pulse rounded-4xl p-2 flex justify-center items-center w-24 h-24`}>
+                                className={`btn shadow-xl bg-error/75 animate-pulse rounded-4xl p-2 flex justify-center items-center w-24 sm:w-28 h-24 sm:h-28`}>
                             <TicTacToeIcon player={cell.value}/>
                         </button>
                     </AnimationOnScroll>
                     :
                     <button id={cell.id} onClick={onClick}
-                            className={`btn bg-accent rounded-4xl p-2 flex justify-center items-center w-24 h-24`}>
+                            className={`btn shadow-xl bg-accent rounded-4xl p-2 flex justify-center items-center w-24 sm:w-28 h-24 sm:h-28`}>
                         <TicTacToeIcon player={cell.value}/>
                     </button>
             }

@@ -37,12 +37,12 @@
 
     .bg-accent {
         @apply
-        bg-zinc-100/90 dark:bg-zinc-800/90 backdrop-blur-[1.25px]
+        bg-zinc-100/90 dark:bg-zinc-800/90 backdrop-blur-[1.5px]
     }
 
     .bg-accent-2 {
         @apply
-        bg-zinc-200/90 dark:bg-zinc-900/90 backdrop-blur-[1.25px]
+        bg-zinc-200/90 dark:bg-zinc-900/90 backdrop-blur-[1.5px]
     }
 
     .bg-reverse {
