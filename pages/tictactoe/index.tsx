@@ -7,6 +7,13 @@ import Footer from "../../src/components/Footer";
 
 export const isBrowser = typeof window !== "undefined";
 export const ws = isBrowser ? new WebSocket('ws://localhost:8080') : null;
+
+export type Game = {
+    id: string
+    board: string[][]
+    turn: string
+    players: WebSocket[]
+}
 const Index = () => {
     const [board, setBoard] = useState(
         [
@@ -20,6 +27,7 @@ const Index = () => {
     const [winner, setWinner] = useState("");
     const [error, setError] = useState("");
     const [gameId, setGameId] = useState("-");
+    const [games, setGames] = useState<Game[]>([]);
 
     if (ws !== null) {
         ws.onmessage = function (event) {
@@ -56,6 +64,9 @@ const Index = () => {
             if (data.gameId !== undefined) {
                 setGameId(data.gameId)
             }
+            if (data.games !== undefined) {
+                setGames(data.games)
+            }
         };
         // if (ws.readyState === 1) {
         //     sendToWS(JSON.stringify({"whoIam": "who"}))
@@ -64,10 +75,10 @@ const Index = () => {
 
     useEffect(() => {
         if (ws !== null && ws.readyState === 1) {
-            sendToWS(JSON.stringify({"whoIam": "who"}))
+            // sendToWS(JSON.stringify({"whoIam": "who"}))
+            sendToWS(JSON.stringify({"games": "which"}))
         }
     }, []);
-
 
 
     function sendToWS(load: any) {
@@ -78,7 +89,7 @@ const Index = () => {
         }
     }
 
-    function onClick(e: any) {
+    function onClickField(e: any) {
         console.log(board)
         if (ws !== null) {
             const target = e.target
@@ -87,6 +98,14 @@ const Index = () => {
             const col = parseInt(colStr);
 
             sendToWS(JSON.stringify({row, col}));
+        }
+    }
+
+    function onClickJoinGame(e: any) {
+        if (ws !== null && gameId !== undefined) {
+            const innerHTML = e.target.innerHTML
+            console.log(innerHTML)
+            sendToWS(JSON.stringify({connectTo: innerHTML}));
         }
     }
 
@@ -120,7 +139,7 @@ const Index = () => {
                         player={winner}/></p>
                 </div>
                 <div className="flex justify-center p-10">
-                    <TicTacToeBoard board={board} onClick={onClick}/>
+                    <TicTacToeBoard board={board} onClick={onClickField}/>
                 </div>
 
                 <div>
@@ -137,6 +156,15 @@ const Index = () => {
                         ""
                     }
                 </div>
+
+                <div className="flex flex-col justify-center items-center gap-2">
+                    {games.map(game =>
+                        <button onClick={onClickJoinGame} key={game.id}
+                                className="bg-accent rounded-xl py-2 px-4 text">{game.id}</button>
+                    )}
+                    <button onClick={onClickJoinGame} className="bg-accent rounded-xl p-2 text">next</button>
+                </div>
+
 
                 <div className='h-[36vh]'/>
                 <Footer/>
