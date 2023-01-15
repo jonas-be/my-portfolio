@@ -102,12 +102,12 @@ const Index = () => {
 
             <div className="w-screen h-full"
                  style={{background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"}}>
-                <Header/>
+                <Header spacerClassName={"sm:hidden"}/>
 
-                <div className="flex justify-center">
-                    <div className="flex bg-accent-2 shadow rounded-xl px-4 py-2 gap-2">
-                        <p className="text-accent font-bold">GameId:</p>
-                        <p className="text">{gameId}</p>
+                <div className="flex justify-center sm:p-3">
+                    <div className="flex bg-accent-2 shadow-md rounded-2xl px-4 py-2 gap-2">
+                        <p className="text-accent text-lg font-bold">GameId:</p>
+                        <p className="text text-lg">{gameId}</p>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@ const Index = () => {
 
                 <div>
                     {winner !== null && winner !== "" ?
-                        <p className="flex justify-center items-center text-success text-xl font-bold">
+                        <p className="flex justify-center items-center text-success text-xl font-bold gap-">
                             <TicTacToeIcon player={winner}/> has won!
                         </p>
                         :
