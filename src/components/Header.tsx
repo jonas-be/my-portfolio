@@ -2,7 +2,7 @@ import React from 'react'
 import Options from './Options'
 import Link from "next/link";
 
-function Header({spacer}: Props) {
+function Header({spacerClassName}: Props) {
     return (
         <>
             <div className="
@@ -17,17 +17,13 @@ function Header({spacer}: Props) {
                 <Options/>
 
             </div>
-            {spacer === undefined || spacer ?
-                <div className='w-full h-[4.28rem]'/>
-                :
-                ""
-            }
+                <div className={`w-full h-[4.28rem] ${spacerClassName}`}/>
         </>
     )
 }
 
 type Props = {
-    spacer?: boolean
+    spacerClassName?: string
 };
 
 
