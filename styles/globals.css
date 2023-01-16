@@ -26,7 +26,10 @@
         text-zinc-600 dark:text-zinc-400
     }
 
-
+    .impress-text {
+        @apply
+        bg-zinc-600 dark:bg-zinc-400
+    }
 
     /* Background Colors */
 
