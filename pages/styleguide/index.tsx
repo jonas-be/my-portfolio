@@ -1,15 +1,16 @@
 import React from "react";
-import Header from "../../src/components/Header";
-import Footer from "../../src/components/Footer";
+import Header from "../../src/components/nav/Header";
+import Footer from "../../src/components/nav/Footer";
 import Link from "next/link";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import {IoSunny} from "react-icons/io5";
+import Skeleton from "../../src/components/skeleton/Skeleton";
 
 function Index() {
 
     return (
-        <>
-            <Header/>
+        <Skeleton title={"Styleguide"} content="Styleguide"
+                  bgGrid={false} gradient={false}>
             <div className="w-full flex flex-col items-center justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={[]}/>
 
@@ -90,8 +91,7 @@ function Index() {
                     </div>
                 </div>
             </div>
-            <Footer/>
-        </>
+        </Skeleton>
     );
 }
 
