@@ -6,7 +6,7 @@ function Footer() {
     return (
         <footer className='p-3 sm:p-6'>
             <div className="bg-accent-2 rounded-4xl">
-                <h3 className='text-accent text-xl text-center p-3'>End of the Site</h3>
+                <p className='text-accent font-bold text-xl text-center p-3'>End of the Site</p>
 
                 <Link href='https://github.com/jonas-be'
                    className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>

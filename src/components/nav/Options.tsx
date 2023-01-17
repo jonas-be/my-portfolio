@@ -19,7 +19,7 @@ function Options() {
 
     return (
         <>
-            <button onClick={toggleDropdown} id="drawer"
+            <button onClick={toggleDropdown} id="drawer" aria-label="Toggle options drawer"
                     className="sm:hidden btn bg-accent-2 shadow-md text-sm p-2.5">
                 <IoMenu className="text-2xl text"/>
             </button>

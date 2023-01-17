@@ -1,17 +1,18 @@
 import React from "react";
-import Header from "../../src/components/Header";
-import Footer from "../../src/components/Footer";
+import Header from "../../src/components/nav/Header";
+import Footer from "../../src/components/nav/Footer";
 import StyleGuideComponent from "../../src/components/common/StyleGuideComponent";
 import Link from "next/link";
 import {GiButtonFinger} from "react-icons/gi";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
+import Skeleton from "../../src/components/skeleton/Skeleton";
 
 function Index() {
 
 
     return (
-        <>
-            <Header/>
+        <Skeleton title={"Header and Footer"} content="Header and Footer"
+                  bgGrid={false} gradient={false}>
             <div className="w-full flex justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={["header-footer"]}/>
             </div>
@@ -42,8 +43,7 @@ function Index() {
 
                 </div>
             </div>
-            <Footer/>
-        </>
+        </Skeleton>
     );
 }
 
