@@ -2,7 +2,7 @@ import React from 'react'
 import Options from './Options'
 import Link from "next/link";
 
-function Header() {
+function Header({logoTitle, labels}: HeaderProps) {
     return (
         <>
             <div className="
@@ -11,7 +11,7 @@ function Header() {
              z-50" >
 
                 <Link href={"/"}  className="btn bg-accent-2 shadow-md rounded-2xl">
-                    <p className='text-accent font-bold text-lg'>Jonas</p>
+                    <p className='text-accent font-bold text-lg'>{logoTitle}</p>
                 </Link>
 
                 <Options />
@@ -20,6 +20,17 @@ function Header() {
             <div className='w-full h-[4.28rem]' />
         </>
     )
+}
+
+type HeaderProps = {
+    logoTitle: string
+    labels: {
+        "drawer": string
+        "darkModeToggleLight": string
+        "darkModeToggleDark": string
+        "githubLink": string
+        "discordLink": string
+    }
 }
 
 
