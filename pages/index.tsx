@@ -4,8 +4,51 @@ import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 import Link from "next/link";
 import Skeleton from "../src/components/skeleton/Skeleton";
+import {GetServerSidePropsContext, GetServerSideProps, InferGetServerSidePropsType} from 'next'
+import {useRouter} from 'next/router';
 
-function Index() {
+
+type Props = {
+    author: string
+    content: string
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    let currentPath = context.resolvedUrl === "/" ? "" : context.resolvedUrl
+    let contentUrl = `http://jonasbe.de:30300/${context.locale}/pages${currentPath}/index.json`
+    let data = await fetch(contentUrl)
+    if (data.ok) {
+        let content = await data.json()
+        return {
+            content: content,
+        }
+    }
+    return {
+        content: {}
+    }
+}
+
+// export async function getStaticProps(context: GetStaticPropsContext) { // : Promise<GetStaticProps>
+//     console.log("STATIC_PROPS!!!")
+//     // const router = useRouter()
+//     // const { pid } = router.query
+//     console.log("---")
+//     console.log(context)
+//     console.log(context.preview)
+//     console.log(context.previewData)
+//     console.log("---")
+//     let path = ""
+//     let contentUrl = `http://jonasbe.de:30300/${context.locale}/pages${path}/index.json`
+//
+//     return {
+//         props: {
+//             test: ""
+//         }, // will be passed to the page component as props
+//     }
+// }
+
+function Index({test}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
 
     return (
         <Skeleton title={"About Jonas Bender"}
