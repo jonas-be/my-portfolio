@@ -1,21 +1,58 @@
 import React from 'react'
 import OptionLinkButton from "../src/components/nav/OptionLinkButton";
 import {IoWarning} from "react-icons/io5";
-import Skeleton from "../src/components/skeleton/Skeleton";
+import Skeleton, {SkeletonContentData} from "../src/components/skeleton/Skeleton";
+import {GetServerSidePropsContext} from "next";
+import {ContentDataType, getContentDataJson, getSkeletonData} from "../src/components/common/ContentDataUtil";
 
 
-function Error() {
+type ContentData = {
+    "title": string,
+    "contentSEO": string,
+    "content": {
+        "heroFirstLine": string,
+        "heroSecondLine": string,
+    }
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    if (context.locale === undefined) {
+        context.locale = "en"
+    }
+    context.locale = "en"
+
+    const pageContentData = await getContentDataJson(context.locale, ContentDataType.PAGE, "/404",
+        {
+            title: "404 - Not Found",
+            contentSEO: "404 - Not Found",
+            content: {
+                heroFirstLine: "Server",
+                heroSecondLine: "Render Error",
+            }
+        }
+    )
+
+    return {
+        props: {
+            pageContentData: pageContentData,
+            skeletonContentData: getSkeletonData(context.locale)
+        }
+    };
+}
+
+function Error({pageContentData, skeletonContentData}: Props) {
     return (
-        <Skeleton title={"404 - Not Found"} content="404 NOT FOUND"
-                  bgGrid={false} gradient={false}>
+        <Skeleton title={pageContentData.title} content={pageContentData.contentSEO}
+                  bgGrid={false} gradient={false}
+                  skeletonContentData={skeletonContentData}>
 
 
             <IoWarning className="text-error text-6xl"/>
-            <h1 className='text-6xl font-bold text-accent'>404</h1>
+            <h1 className='text-6xl font-bold text-accent'>{pageContentData.content.heroFirstLine}</h1>
             <div className="p-1">
                 <div className="w-32 h-0.5 bg-accent-2 rounded-full "/>
             </div>
-            <h2 className='text-2xl font-bold text'>NOT FOUND</h2>
+            <h2 className='text-2xl font-bold text'>{pageContentData.content.heroSecondLine}</h2>
 
             <div className="p-2"/>
 
@@ -30,4 +67,8 @@ function Error() {
     )
 }
 
+type Props = {
+    pageContentData: ContentData,
+    skeletonContentData: SkeletonContentData
+}
 export default Error

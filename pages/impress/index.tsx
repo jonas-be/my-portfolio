@@ -2,13 +2,52 @@ import {MouseParallaxChild, MouseParallaxContainer} from "react-parallax-mouse";
 import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
-import Skeleton from "../../src/components/skeleton/Skeleton";
+import Skeleton, {SkeletonContentData} from "../../src/components/skeleton/Skeleton";
+import {GetServerSidePropsContext} from "next";
+import {ContentDataType, getContentDataJson, getSkeletonData} from "../../src/components/common/ContentDataUtil";
 
-function Index() {
+type ContentData = {
+    "title": string,
+    "contentSEO": string,
+    "content": {
+        "heroHeader": string,
+        "impressSvgAlt": string,
+        "impressDisclaimer": string
+    }
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    if (context.locale === undefined) {
+        context.locale = "en"
+    }
+    context.locale = "en"
+
+    const pageContentData = await getContentDataJson(context.locale, ContentDataType.PAGE, "/impress",
+        {
+            title: "Impress",
+            contentSEO: "Impress",
+            content: {
+                heroHeader: "Impress",
+                impressSvgAlt: "Jonas Bender Address",
+                impressDisclaimer: "Misuse of the above data of the legal responsible will be reported through legal channels. Misuse includes unauthorized disclosure of the data, non-business concerns and privacy disruption."
+            }
+        }
+    )
+
+    return {
+        props: {
+            pageContentData: pageContentData,
+            skeletonContentData: getSkeletonData(context.locale)
+        }
+    };
+}
+
+function Index({pageContentData, skeletonContentData}: Props) {
 
     return (
         <Skeleton title={"Impress"} content="Impress"
-                  bgGrid={false} gradient={false}>
+                  bgGrid={false} gradient={false}
+                  skeletonContentData={skeletonContentData}>
 
 
             <MouseParallaxContainer
@@ -21,7 +60,7 @@ function Index() {
                     <MouseParallaxChild factorX={0.1} factorY={0.1}>
                         <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}
                                            className='text-accent text-center text-7xl sm:text-8xl font-bold p-3'>
-                            Impress
+                            {pageContentData.content.heroHeader}
                         </AnimationOnScroll>
                     </MouseParallaxChild>
                 </h1>
@@ -78,6 +117,11 @@ function Index() {
 
         </Skeleton>
     );
+}
+
+type Props = {
+    pageContentData: ContentData,
+    skeletonContentData: SkeletonContentData
 }
 
 export default Index;

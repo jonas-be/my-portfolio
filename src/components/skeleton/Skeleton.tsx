@@ -24,7 +24,12 @@ const Skeleton = ({title, content, gradient, bgGrid, skeletonContentData, childr
 
                     {children}
 
-                    <Footer/>
+                    <Footer endOfSiteHeader={skeletonContentData.endOfSiteHeader}
+                            githubLink={skeletonContentData.githubLink}
+                            discordLink={skeletonContentData.discordLink}
+                            impress={skeletonContentData.impress}
+                            copyright={skeletonContentData.copyright}
+                    />
                 </div>
             </div>
         </>

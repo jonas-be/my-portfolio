@@ -5,7 +5,7 @@ import {FaDiscord, FaGithub} from "react-icons/fa";
 import {IoMenu} from "react-icons/io5";
 
 
-function Options() {
+function Options({labels}: OptionProps) {
 
     function toggleDropdown() {
         let optionPanel = document.getElementById("optionPanle");
@@ -19,7 +19,7 @@ function Options() {
 
     return (
         <>
-            <button onClick={toggleDropdown} id="drawer" aria-label="Toggle options drawer"
+            <button onClick={toggleDropdown} id="drawer" aria-label={labels.drawer}
                     className="sm:hidden btn bg-accent-2 shadow-md text-sm p-2.5">
                 <IoMenu className="text-2xl text"/>
             </button>
@@ -30,16 +30,26 @@ function Options() {
 
                 <div
                     className='fixed top-14 right-3 bg-accent-2 shadow-md rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
-                    <DarkModeToggle/>
+                    <DarkModeToggle darkModeToggleDark={labels.darkModeToggleDark} darkModeToggleLight={labels.darkModeToggleLight}/>
 
-                    <OptionLinkButton link="https://github.com/jonas-be" label="Github"
+                    <OptionLinkButton link="https://github.com/jonas-be" label={labels.githubLink}
                                       icon={<FaGithub className="text-2xl text"/>}/>
-                    <OptionLinkButton link="https://discord.gg/EbFsEQbB7J" label="Github"
+                    <OptionLinkButton link="https://discord.gg/EbFsEQbB7J" label={labels.discordLink}
                                       icon={<FaDiscord className="text-2xl text"/>}/>
                 </div>
             </div>
         </>
     )
+}
+
+type OptionProps = {
+    labels: {
+        drawer: string,
+        darkModeToggleLight: string,
+        darkModeToggleDark: string,
+        githubLink: string,
+        discordLink: string
+    }
 }
 
 export default Options

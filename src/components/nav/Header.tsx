@@ -14,7 +14,7 @@ function Header({logoTitle, labels}: HeaderProps) {
                     <p className='text-accent font-bold text-lg'>{logoTitle}</p>
                 </Link>
 
-                <Options />
+                <Options labels={labels}/>
 
             </div>
             <div className='w-full h-[4.28rem]' />
