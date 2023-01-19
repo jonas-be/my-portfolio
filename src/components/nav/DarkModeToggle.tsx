@@ -15,7 +15,7 @@ function DarkModeToggle() {
         }
 
         setDarkModeIcon(isDarkModeEnabled())
-    }, [])
+    }, [darkModeIcon])
 
     function toggleDarkMode() {
         // if set via local storage previously
