@@ -5,6 +5,16 @@ import Page404De from "../../../public/content/pages/404/de.json"
 import ImprintPageDe from "../../../public/content/pages/imprint/de.json"
 import ImprintPageEn from "../../../public/content/pages/imprint/en.json"
 
+export function selectLangauge(object: any, lang: string| undefined) {
+    if (lang !== undefined) {
+        // @ts-ignore
+        const tmp = object[lang]
+        return  tmp !== undefined ? tmp : SKELETON_DATA.en
+    } else {
+        return SKELETON_DATA.en
+    }
+}
+
 export const SKELETON_DATA = {
     de: SkeletonDe,
     en: SkeletonEn,

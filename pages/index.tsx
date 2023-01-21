@@ -5,7 +5,8 @@ import "animate.css/animate.min.css";
 import Skeleton, {SkeletonContentData} from "../src/components/skeleton/Skeleton";
 import {GetServerSidePropsContext} from 'next'
 import {ContentDataType, getContentDataJson} from "../src/components/utils/ContentDataUtil";
-import {SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
+import {selectLangauge, SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
+import {useRouter} from "next/router";
 
 
 type ContentData = {
@@ -59,13 +60,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 function Index({pageContentData}: Props) {
 
-    const skeletonData = SKELETON_DATA.en
+    const router = useRouter()
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={pageContentData.title}
                   content={pageContentData.contentSEO}
                   gradient={true} bgGrid={true}
-                  skeletonContentData={skeletonData}>
+                  skeletonContentData={skeletonContentData}>
 
             <MouseParallaxContainer
                 className="w-full h-[60vh] flex flex-col justify-center align-center"

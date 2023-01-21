@@ -2,28 +2,25 @@ import React, {useEffect} from 'react'
 import OptionLinkButton from "../src/components/nav/OptionLinkButton";
 import {IoWarning} from "react-icons/io5";
 import Skeleton, {SkeletonContentData} from "../src/components/skeleton/Skeleton";
-import {PAGE_404_DATA, SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
-
-
-type ContentData = {
-    "title": string,
-    "contentSEO": string,
-    "content": {
-        "heroFirstLine": string,
-        "heroSecondLine": string,
-    }
-}
-
+import {
+    IMPRINT_PAGE_DATA,
+    PAGE_404_DATA,
+    selectLangauge,
+    SKELETON_DATA
+} from "../src/components/utils/StaticContentUtil";
+import {useRouter} from "next/router";
 
 function Error() {
 
-    const pageContentData = PAGE_404_DATA.en
-    const skeletonData = SKELETON_DATA.en
+    const router = useRouter()
+
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const pageContentData = selectLangauge(PAGE_404_DATA, router.locale)
 
     return (
         <Skeleton title={pageContentData.title} content={pageContentData.contentSEO}
                   bgGrid={false} gradient={false}
-                  skeletonContentData={skeletonData}>
+                  skeletonContentData={skeletonContentData}>
 
             <div className="flex flex-col justify-center items-center h-[65vh] ">
 
@@ -48,8 +45,4 @@ function Error() {
     )
 }
 
-type Props = {
-    pageContentData: ContentData,
-    skeletonContentData: SkeletonContentData
-}
 export default Error

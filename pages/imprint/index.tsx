@@ -3,14 +3,18 @@ import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 import Skeleton from "../../src/components/skeleton/Skeleton";
-import {IMPRINT_PAGE_DATA, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
+import {IMPRINT_PAGE_DATA, selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
 import {FiInfo} from "react-icons/fi";
+import {useRouter} from 'next/router'
 
 
 function Index() {
 
-    const pageContentData = IMPRINT_PAGE_DATA.en
-    const skeletonContentData = SKELETON_DATA.en
+    const router = useRouter()
+
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const pageContentData = selectLangauge(IMPRINT_PAGE_DATA, router.locale)
+
 
     return (
         <Skeleton title={pageContentData.title} content={pageContentData.contentSEO}
