@@ -20,7 +20,7 @@ function Footer({endOfSiteHeader, githubLink, discordLink, impress, copyright}: 
                     <div className="pl-2 text">{discordLink}</div>
                 </Link>
 
-                <Link href={"/impress"}
+                <Link href={"/imprint"}
                       className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>
                     <FaBalanceScaleRight className="text-2xl text"/>
                     <div className="pl-2 text">{impress}</div>

@@ -1,0 +1,15 @@
+{
+  "logoTitle": "Jonas",
+  "labels": {
+    "drawer": "Toggle menu",
+    "darkModeToggleLight": "Enable LightMode",
+    "darkModeToggleDark": "Enable DarkMode",
+    "githubLink": "GitHub",
+    "discordLink": "Community Discord"
+  },
+  "endOfSiteHeader": "End of the Site",
+  "githubLink": "GitHub",
+  "discordLink": "Discord",
+  "impress": "Imprint",
+  "copyright": "Copyright © Jonas Bender 2023"
+}

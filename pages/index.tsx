@@ -4,7 +4,9 @@ import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 import Skeleton, {SkeletonContentData} from "../src/components/skeleton/Skeleton";
 import {GetServerSidePropsContext} from 'next'
-import {ContentDataType, getContentDataJson, getSkeletonData} from "../src/components/common/ContentDataUtil";
+import {ContentDataType, getContentDataJson} from "../src/components/utils/ContentDataUtil";
+import {SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
+
 
 type ContentData = {
     "title": string,
@@ -26,12 +28,8 @@ type ContentData = {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    if (context.locale === undefined) {
-        context.locale = "en"
-    }
-    context.locale = "en"
 
-    const pageContentData = await getContentDataJson(context.locale, ContentDataType.PAGE, "/index",
+    const pageContentData = await getContentDataJson(context, ContentDataType.PAGE, "/index",
         {
             title: "Server Render Error",
             contentSEO: "Server Render Error",
@@ -54,19 +52,20 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
     return {
         props: {
-            pageContentData: pageContentData,
-            skeletonContentData: getSkeletonData(context.locale)
+            pageContentData: pageContentData
         }
     };
 }
 
-function Index({pageContentData, skeletonContentData}: Props) {
+function Index({pageContentData}: Props) {
+
+    const skeletonData = SKELETON_DATA.en
 
     return (
         <Skeleton title={pageContentData.title}
                   content={pageContentData.contentSEO}
                   gradient={true} bgGrid={true}
-                  skeletonContentData={skeletonContentData}>
+                  skeletonContentData={skeletonData}>
 
             <MouseParallaxContainer
                 className="w-full h-[60vh] flex flex-col justify-center align-center"
@@ -94,9 +93,9 @@ function Index({pageContentData, skeletonContentData}: Props) {
 
 
             <div
-                className="flex flex-col xl:flex-row xl:gap-20 justify-center items-center xl:items-start xl:justify-center">
+                className="flex flex-col lg:flex-row sm:mx-8 lg:mx-14 xl:mx-24 lg:gap-20 justify-center items-center lg:items-start ">
 
-                <div className="p-6">
+                <div className="p-6 mt-6">
                     <h2 className="text-accent font-bold text-xl">{pageContentData.content.textHeader}</h2>
                     <p className="text pt-4">
                         {pageContentData.content.textDescription}
@@ -104,7 +103,7 @@ function Index({pageContentData, skeletonContentData}: Props) {
                 </div>
 
                 <AnimationOnScroll animateIn="animate__fadeInUp">
-                    <div className="bg-accent-2 w-fit p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
+                    <div className="bg-accent-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
                         <table className="max-w-sm">
                             <caption
                                 className="text-accent text-lg pb-6">{pageContentData.content.aboutMe.header}</caption>
