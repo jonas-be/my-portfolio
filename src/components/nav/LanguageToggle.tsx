@@ -22,8 +22,7 @@ export default function LanguageToggle({openLabel, title, languages, cancel, rou
     let [isOpen, setIsOpen] = useState(false)
 
     function changeLocale(lang: string) {
-        console.log(router)
-        router.push({}, router.asPath, { locale: lang })
+        router.push({}, router.asPath, {locale: lang})
     }
 
     function closeModal() {
@@ -40,9 +39,7 @@ export default function LanguageToggle({openLabel, title, languages, cancel, rou
             <button
                 onClick={openModal}
                 className="btn p-2.5 flex justify-center items-center"
-                title={openLabel}
-                // title={darkModeIcon ? darkModeToggleLight : darkModeToggleDark}
-            >
+                title={openLabel}>
                 <IoMdGlobe className="text-2xl text"/>
             </button>
 
@@ -81,9 +78,9 @@ export default function LanguageToggle({openLabel, title, languages, cancel, rou
                                     </Dialog.Title>
                                     <div className="mt-2">
                                         {languages.map(lang =>
-                                        <button key={lang.id} onClick={() => changeLocale(lang.id)}
-                                                className="btn bg-accent-2 w-full m-1">
-                                            {lang.name}</button>
+                                            <button key={lang.id} onClick={() => changeLocale(lang.id)}
+                                                    className="btn bg-accent-2 w-full m-1">
+                                                {lang.name}</button>
                                         )}
                                     </div>
 
@@ -105,7 +102,7 @@ export default function LanguageToggle({openLabel, title, languages, cancel, rou
 export type LanguageToggleProps = {
     openLabel: string
     title: string
-    languages: {id: string, name: string}[]
+    languages: { id: string, name: string }[]
     cancel: string
     router: NextRouter
 }

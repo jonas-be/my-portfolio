@@ -14,7 +14,7 @@ function Index() {
 
     return (
         <Skeleton title={"Styleguide"} content="Styleguide"
-                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData}>
+                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData} router={router}>
             <div className="w-full flex flex-col items-center justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={[]}/>
             </div>

@@ -15,7 +15,7 @@ function Index() {
 
     return (
         <Skeleton title={"Header and Footer"} content="Header and Footer"
-                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData}>
+                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData} router={router}>
             <div className="w-full flex justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={["header-footer"]}/>
             </div>
@@ -31,7 +31,7 @@ function Index() {
                     <StyleGuideComponent title="Button Sizes" code={`
 <Header/>
             `}>
-                        <Header logoTitle={"Jonas"} labels={skeletonContentData.labels}/>
+                        <Header logoTitle={"Jonas"} options={skeletonContentData.options} router={router}/>
                     </StyleGuideComponent>
 
                     <StyleGuideComponent title="Button Sizes" code={`

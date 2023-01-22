@@ -20,7 +20,7 @@ function Error() {
     return (
         <Skeleton title={pageContentData.title} content={pageContentData.contentSEO}
                   bgGrid={false} gradient={false}
-                  skeletonContentData={skeletonContentData}>
+                  skeletonContentData={skeletonContentData} router={router}>
 
             <div className="flex flex-col justify-center items-center h-[65vh] ">
 

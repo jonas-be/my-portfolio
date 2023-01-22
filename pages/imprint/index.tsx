@@ -19,7 +19,7 @@ function Index() {
     return (
         <Skeleton title={pageContentData.title} content={pageContentData.contentSEO}
                   bgGrid={false} gradient={false}
-                  skeletonContentData={skeletonContentData}>
+                  skeletonContentData={skeletonContentData} router={router}>
 
 
             <MouseParallaxContainer
