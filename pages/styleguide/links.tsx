@@ -3,13 +3,16 @@ import StyleGuideComponent from "../../src/components/common/StyleGuideComponent
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import Link from "next/link";
 import Skeleton from "../../src/components/skeleton/Skeleton";
+import {useRouter} from "next/router";
+import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
 
 function Index() {
-
+    const router = useRouter()
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={"404 - Not Found"} content="404 NOT FOUND"
-                  bgGrid={false} gradient={false}>
+                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData}>
             <div className="w-full flex justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={["links"]}/>
             </div>

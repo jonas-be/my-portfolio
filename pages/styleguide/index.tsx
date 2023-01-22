@@ -5,21 +5,18 @@ import Link from "next/link";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import {IoSunny} from "react-icons/io5";
 import Skeleton from "../../src/components/skeleton/Skeleton";
+import {useRouter} from "next/router";
+import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
 
 function Index() {
+    const router = useRouter()
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={"Styleguide"} content="Styleguide"
-                  bgGrid={false} gradient={false}>
+                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData}>
             <div className="w-full flex flex-col items-center justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={[]}/>
-
-                {/*<ul className="p-4">*/}
-                {/*    <li className="flex items-center link text-secondary"><HiChevronDoubleRight/><Link*/}
-                {/*        href="/styleguide/buttons">Buttons</Link></li>*/}
-                {/*    <li className="flex items-center link text-secondary"><HiChevronDoubleRight/><Link*/}
-                {/*        href="/styleguide/header-footer">Header/Footer</Link></li>*/}
-                {/*</ul>*/}
             </div>
 
             <div className="flex flex-col md:flex-row justify-center m-2 py-6 gap-16 lg:gap-40">

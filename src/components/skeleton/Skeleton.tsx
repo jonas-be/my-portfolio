@@ -27,7 +27,7 @@ const Skeleton = ({title, content, gradient, bgGrid, skeletonContentData, childr
                     <Footer endOfSiteHeader={skeletonContentData.endOfSiteHeader}
                             githubLink={skeletonContentData.githubLink}
                             discordLink={skeletonContentData.discordLink}
-                            impress={skeletonContentData.impress}
+                            impress={skeletonContentData.imprint}
                             copyright={skeletonContentData.copyright}
                     />
                 </div>
@@ -57,7 +57,7 @@ export type SkeletonContentData = {
     endOfSiteHeader: string
     githubLink: string
     discordLink: string
-    impress: string
+    imprint: string
     copyright: string
 }
 

@@ -3,13 +3,17 @@ import StyleGuideComponent from "../../src/components/common/StyleGuideComponent
 import {IoSunny} from "react-icons/io5";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import Skeleton from "../../src/components/skeleton/Skeleton";
+import {useRouter} from "next/router";
+import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
 
 function Index() {
+    const router = useRouter()
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
 
 
     return (
         <Skeleton title={"Buttons"} content="Buttons"
-                  bgGrid={false} gradient={false}>
+                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData}>
 
             <div className="w-full flex justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={["buttons"]}/>
