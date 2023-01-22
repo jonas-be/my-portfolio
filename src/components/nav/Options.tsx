@@ -3,10 +3,11 @@ import DarkModeToggle from './DarkModeToggle'
 import OptionLinkButton from './OptionLinkButton'
 import {FaDiscord, FaGithub} from "react-icons/fa";
 import {IoMenu} from "react-icons/io5";
-import LanguageToggle from "./LanguageToggle";
+import LanguageToggle, {LanguageToggleProps} from "./LanguageToggle";
+import {NextRouter} from "next/router";
 
 
-function Options({labels}: OptionProps) {
+function Options({labels, languageToggle, router}: OptionProps) {
 
     function toggleDropdown() {
         let optionPanel = document.getElementById("optionPanle");
@@ -31,9 +32,14 @@ function Options({labels}: OptionProps) {
 
                 <div
                     className='fixed top-14 right-3 bg-accent-2 shadow-md rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
-                    <DarkModeToggle darkModeToggleDark={labels.darkModeToggleDark} darkModeToggleLight={labels.darkModeToggleLight}/>
+                    <DarkModeToggle darkModeToggleDark={labels.darkModeToggleDark}
+                                    darkModeToggleLight={labels.darkModeToggleLight}/>
 
-                    <LanguageToggle />
+                    <LanguageToggle openLabel={languageToggle.openLabel}
+                                    title={languageToggle.title}
+                                    languages={languageToggle.languages}
+                                    cancel={languageToggle.cancel}
+                                    router={router}/>
 
                     <OptionLinkButton link="https://github.com/jonas-be" label={labels.githubLink}
                                       icon={<FaGithub className="text-2xl text"/>}/>
@@ -45,7 +51,7 @@ function Options({labels}: OptionProps) {
     )
 }
 
-type OptionProps = {
+export type OptionProps = {
     labels: {
         drawer: string,
         darkModeToggleLight: string,
@@ -53,6 +59,8 @@ type OptionProps = {
         githubLink: string,
         discordLink: string
     }
+    languageToggle: LanguageToggleProps
+    router: NextRouter
 }
 
 export default Options

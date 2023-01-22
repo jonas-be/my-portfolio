@@ -67,7 +67,8 @@ function Index({pageContentData}: Props) {
         <Skeleton title={pageContentData.title}
                   content={pageContentData.contentSEO}
                   gradient={true} bgGrid={true}
-                  skeletonContentData={skeletonContentData}>
+                  skeletonContentData={skeletonContentData}
+                  router={router}>
 
             <MouseParallaxContainer
                 className="w-full h-[60vh] flex flex-col justify-center align-center"

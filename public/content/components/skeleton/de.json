@@ -1,11 +1,30 @@
 {
-  "logoTitle": "Jonas",
-  "labels": {
-    "drawer": "Toggle Menü",
-    "darkModeToggleLight": "Hellen Modus aktivieren",
-    "darkModeToggleDark": "Dunklen Modus aktivieren",
-    "githubLink": "GitHub",
-    "discordLink": "Community Discord"
+  "header": {
+    "logoTitle": "Jonas",
+    "options": {
+      "labels": {
+        "drawer": "Toggle Menü",
+        "darkModeToggleLight": "Hellen Modus aktivieren",
+        "darkModeToggleDark": "Dunklen Modus aktivieren",
+        "githubLink": "GitHub",
+        "discordLink": "Community Discord"
+      },
+      "languageToggle": {
+        "openLabel": "Sprachwahl Menü öffnen",
+        "title": "Sprache wählen",
+        "languages": [
+          {
+            "id": "de",
+            "name": "Deutsch"
+          },
+          {
+            "id": "en",
+            "name": "Englisch"
+          }
+        ],
+        "cancel": "Abbrechen"
+      }
+    }
   },
   "endOfSiteHeader": "Ende der Seite",
   "githubLink": "GitHub",

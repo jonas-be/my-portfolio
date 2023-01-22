@@ -1,8 +1,9 @@
 import React from 'react'
-import Options from './Options'
+import Options, {OptionProps} from './Options'
 import Link from "next/link";
+import {NextRouter} from "next/router";
 
-function Header({logoTitle, labels}: HeaderProps) {
+function Header({logoTitle, options, router}: HeaderProps) {
     return (
         <>
             <div className="
@@ -14,7 +15,7 @@ function Header({logoTitle, labels}: HeaderProps) {
                     <p className='text-accent font-bold text-lg'>{logoTitle}</p>
                 </Link>
 
-                <Options labels={labels}/>
+                <Options labels={options.labels} languageToggle={options.languageToggle} router={router}/>
 
             </div>
             <div className='w-full h-[4.28rem]' />
@@ -22,15 +23,10 @@ function Header({logoTitle, labels}: HeaderProps) {
     )
 }
 
-type HeaderProps = {
+export type HeaderProps = {
     logoTitle: string
-    labels: {
-        "drawer": string
-        "darkModeToggleLight": string
-        "darkModeToggleDark": string
-        "githubLink": string
-        "discordLink": string
-    }
+    options: OptionProps
+    router: NextRouter
 }
 
 
