@@ -38,7 +38,7 @@ function Options({labels, languageToggle, router}: OptionProps) {
                     <LanguageToggle openLabel={languageToggle.openLabel}
                                     title={languageToggle.title}
                                     languages={languageToggle.languages}
-                                    cancel={languageToggle.cancel}
+                                    done={languageToggle.done}
                                     router={router}/>
 
                     <OptionLinkButton link="https://github.com/jonas-be" label={labels.githubLink}

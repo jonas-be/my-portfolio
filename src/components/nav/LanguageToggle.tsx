@@ -1,24 +1,10 @@
-// <button
-//     onClick={toggleDarkMode}
-//     className="btn p-2.5 flex justify-center items-center"
-//     title={darkModeIcon ? darkModeToggleLight : darkModeToggleDark}
-// >
-//     <IoMdGlobe className="text-2xl text"/>
-// </button>
-
 import {IoMdGlobe} from "react-icons/io";
 
 import {Dialog, Transition} from '@headlessui/react'
 import React, {Fragment, useState} from 'react'
 import {NextRouter} from "next/router";
-//
-// const languages = [
-//     {id: "de", name: 'German'},
-//     {id: "en", name: 'English'},
-//     {id: "fr", name: 'France'},
-// ]
 
-export default function LanguageToggle({openLabel, title, languages, cancel, router}: LanguageToggleProps) {
+export default function LanguageToggle({openLabel, title, languages, done, router}: LanguageToggleProps) {
     let [isOpen, setIsOpen] = useState(false)
 
     function changeLocale(lang: string) {
@@ -79,14 +65,14 @@ export default function LanguageToggle({openLabel, title, languages, cancel, rou
                                     <div className="mt-2">
                                         {languages.map(lang =>
                                             <button key={lang.id} onClick={() => changeLocale(lang.id)}
-                                                    className="btn bg-accent-2 w-full m-1">
+                                                    className="btn bg-accent-2 w-full m-1 text">
                                                 {lang.name}</button>
                                         )}
                                     </div>
 
                                     <div className="mt-6">
-                                        <button type="button" className="btn bg-error" onClick={closeModal}>
-                                            {cancel}
+                                        <button type="button" className="btn bg-success w-full" onClick={closeModal}>
+                                            {done}
                                         </button>
                                     </div>
                                 </Dialog.Panel>
@@ -103,6 +89,6 @@ export type LanguageToggleProps = {
     openLabel: string
     title: string
     languages: { id: string, name: string }[]
-    cancel: string
+    done: string
     router: NextRouter
 }
