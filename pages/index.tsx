@@ -2,21 +2,74 @@ import {MouseParallaxChild, MouseParallaxContainer} from "react-parallax-mouse";
 import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
-import Link from "next/link";
-import Skeleton from "../src/components/skeleton/Skeleton";
+import Skeleton, {SkeletonContentData} from "../src/components/skeleton/Skeleton";
+import {GetServerSidePropsContext} from 'next'
+import {ContentDataType, getContentDataJson} from "../src/components/utils/ContentDataUtil";
+import {selectLangauge, SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
+import {useRouter} from "next/router";
+import ReactMarkdown from "react-markdown";
 
-function Index() {
+
+type ContentData = {
+    "title": string,
+    "contentSEO": string,
+    "content": {
+        "heroFirstLine": string,
+        "heroSecondLine": string,
+        "textHeader": string,
+        "textDescription": string,
+        "aboutMe": {
+            "header": string,
+            "name": string,
+            "aka": string,
+            "age": string,
+            "location": string,
+            "job": string
+        }
+    }
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+
+    const pageContentData = await getContentDataJson(context, ContentDataType.PAGE, "/index",
+        {
+            title: "Server Render Error",
+            contentSEO: "Server Render Error",
+            content: {
+                heroFirstLine: "Server",
+                heroSecondLine: "Render Error",
+                textHeader: "---,",
+                textDescription: "----\n-----\n---",
+                aboutMe: {
+                    header: "---",
+                    name: "---",
+                    aka: "---",
+                    age: "---",
+                    location: "---",
+                    job: "---"
+                }
+            }
+        }
+    )
+
+    return {
+        props: {
+            pageContentData: pageContentData
+        }
+    };
+}
+
+function Index({pageContentData}: Props) {
+
+    const router = useRouter()
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
 
     return (
-        <Skeleton title={"About Jonas Bender"}
-                  content="
-                          Name: Jonas Bender
-                          Aka: jonas-be
-                          Age: 17
-                          Location: Germany
-                          Job: Software Developer"
-                  gradient={true} bgGrid={true}>
-
+        <Skeleton title={pageContentData.title}
+                  content={pageContentData.contentSEO}
+                  gradient={true} bgGrid={true}
+                  skeletonContentData={skeletonContentData}
+                  router={router}>
 
             <MouseParallaxContainer
                 className="w-full h-[60vh] flex flex-col justify-center align-center"
@@ -28,14 +81,14 @@ function Index() {
                     <MouseParallaxChild factorX={0.15} factorY={0.15}>
                         <AnimationOnScroll animateIn="animate__slideInDown"
                                            className='text-fuchsia-400 text-center text-4xl font-bold'>
-                            <i>Hey I'm</i>
+                            <i>{pageContentData.content.heroFirstLine}</i>
                         </AnimationOnScroll>
                     </MouseParallaxChild>
 
                     <MouseParallaxChild factorX={0.1} factorY={0.1}>
                         <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}
                                            className='text-accent text-center text-8xl font-bold p-3'>
-                            Jonas
+                            {pageContentData.content.heroSecondLine}
                         </AnimationOnScroll>
                     </MouseParallaxChild>
                 </h1>
@@ -44,43 +97,38 @@ function Index() {
 
 
             <div
-                className="flex flex-col xl:flex-row xl:gap-20 justify-center items-center xl:items-start xl:justify-center">
+                className="flex flex-col lg:flex-row sm:mx-8 lg:mx-14 xl:mx-24 lg:gap-20 justify-center items-center lg:items-start ">
 
-                <div className="p-6">
-                    <h2 className="text-accent font-bold text-xl">Hello World,</h2>
-                    <p className="text pt-4">
-                        my name is Jonas. I'm located in Germany. <br/>
-                        I love to develop Front- and Backend. And I'm also very interested in deploying and
-                        administrating software.<br/>
-                        <br/>
-                        Watch the <Link href="/styleguide" className="link text-info">Styleguide</Link>
-                    </p>
+                <div className="p-6 mt-6">
+                    <h2 className="text-accent font-bold text-xl">{pageContentData.content.textHeader}</h2>
+                    <ReactMarkdown className="text pt-4">{pageContentData.content.textDescription}</ReactMarkdown>
                 </div>
 
                 <AnimationOnScroll animateIn="animate__fadeInUp">
-                    <div className="bg-accent-2 w-fit p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
+                    <div className="bg-accent-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
                         <table className="max-w-sm">
-                            <caption className="text-accent text-lg pb-6">About me</caption>
+                            <caption
+                                className="text-accent text-lg pb-6">{pageContentData.content.aboutMe.header}</caption>
                             <tbody>
                             <tr>
                                 <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Name:</td>
-                                <td className="text min-w-[5rem]">Jonas Bender</td>
+                                <td className="text min-w-[5rem]">{pageContentData.content.aboutMe.name}</td>
                             </tr>
                             <tr>
                                 <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Aka:</td>
-                                <td className="text min-w-[5rem]">jonas-be</td>
+                                <td className="text min-w-[5rem]">{pageContentData.content.aboutMe.aka}</td>
                             </tr>
                             <tr>
                                 <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Age:</td>
-                                <td className="text">17</td>
+                                <td className="text">{pageContentData.content.aboutMe.age}</td>
                             </tr>
                             <tr>
                                 <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Location:</td>
-                                <td className="text">Germany</td>
+                                <td className="text">{pageContentData.content.aboutMe.location}</td>
                             </tr>
                             <tr>
                                 <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Job:</td>
-                                <td className="text ">Software Developer</td>
+                                <td className="text ">{pageContentData.content.aboutMe.job}</td>
                                 <td className=" w-10 sm:w-16 h-2"></td>
                             </tr>
                             </tbody>
@@ -91,6 +139,11 @@ function Index() {
 
         </Skeleton>
     );
+}
+
+type Props = {
+    pageContentData: ContentData,
+    skeletonContentData: SkeletonContentData
 }
 
 export default Index;

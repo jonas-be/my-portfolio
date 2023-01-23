@@ -1,0 +1,34 @@
+{
+  "header": {
+    "logoTitle": "Jonas",
+    "options": {
+      "labels": {
+        "drawer": "Toggle menu",
+        "darkModeToggleLight": "Enable LightMode",
+        "darkModeToggleDark": "Enable DarkMode",
+        "githubLink": "GitHub",
+        "discordLink": "Community Discord"
+      },
+      "languageToggle": {
+        "openLabel": "open Choose Langauge Menu",
+        "title": "Choose Langauge",
+        "languages": [
+          {
+            "id": "de",
+            "name": "German"
+          },
+          {
+            "id": "en",
+            "name": "English"
+          }
+        ],
+        "done": "Done"
+      }
+    }
+  },
+  "endOfSiteHeader": "End of the Site",
+  "githubLink": "GitHub",
+  "discordLink": "Discord",
+  "imprint": "Imprint",
+  "copyright": "Copyright © Jonas Bender 2023"
+}

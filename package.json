@@ -17,6 +17,7 @@
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "latest",
     "react-icons": "^4.7.1",
+    "react-markdown": "^8.0.5",
     "react-parallax-mouse": "^2.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "typescript": "latest"
