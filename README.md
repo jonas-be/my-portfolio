@@ -23,4 +23,4 @@ After that it will redeploy on Kubernetes.
 | **Branch**      | main               | stage                     |
 | **NodePort**    | 31500              | 31550                     |
 | **Url**         | https://jonasbe.de | https://pre.jonasbe.de    |
-| **Open Access** | ✔ *(soon)*         | ✖ *(Password Protection)* |
+| **Open Access** | ✔ *(soon)*         | ❌ *(Password Protection)* |
