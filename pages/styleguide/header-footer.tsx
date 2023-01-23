@@ -6,13 +6,16 @@ import Link from "next/link";
 import {GiButtonFinger} from "react-icons/gi";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import Skeleton from "../../src/components/skeleton/Skeleton";
+import {useRouter} from "next/router";
+import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
 
 function Index() {
-
+    const router = useRouter()
+    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={"Header and Footer"} content="Header and Footer"
-                  bgGrid={false} gradient={false}>
+                  bgGrid={false} gradient={false} skeletonContentData={skeletonContentData} router={router}>
             <div className="w-full flex justify-center">
                 <BreadcrumbNavigation homeName={"Styleguide"} urlPrefix={"/styleguide"} url={["header-footer"]}/>
             </div>
@@ -28,7 +31,7 @@ function Index() {
                     <StyleGuideComponent title="Button Sizes" code={`
 <Header/>
             `}>
-                        <Header/>
+                        <Header logoTitle={"Jonas"} options={skeletonContentData.options} router={router}/>
                     </StyleGuideComponent>
 
                     <StyleGuideComponent title="Button Sizes" code={`
@@ -37,7 +40,10 @@ function Index() {
 </div>
             `}>
                         <div className="w-full">
-                            <Footer/>
+                            <Footer copyright={skeletonContentData.copyright}
+                                    discordLink={skeletonContentData.discordLink}
+                                    githubLink={skeletonContentData.githubLink}
+                                    endOfSiteHeader={skeletonContentData.endOfSiteHeader} impress={skeletonContentData.impress}/>
                         </div>
                     </StyleGuideComponent>
 

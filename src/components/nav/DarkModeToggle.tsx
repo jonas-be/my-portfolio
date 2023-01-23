@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {IoMoon, IoSunny} from "react-icons/io5";
 
-function DarkModeToggle() {
+function DarkModeToggle({darkModeToggleLight, darkModeToggleDark}: DarkModeToggleProps) {
 
     const [darkModeIcon, setDarkModeIcon] = useState<boolean>(true)
 
@@ -15,7 +15,7 @@ function DarkModeToggle() {
         }
 
         setDarkModeIcon(isDarkModeEnabled())
-    }, [])
+    }, [darkModeIcon])
 
     function toggleDarkMode() {
         // if set via local storage previously
@@ -60,15 +60,20 @@ function DarkModeToggle() {
         <button
             onClick={toggleDarkMode}
             className="btn p-2.5 flex justify-center items-center"
-            title={!darkModeIcon ? "Enable light mode" : "Enable dark mode"}
+            title={darkModeIcon ? darkModeToggleLight : darkModeToggleDark}
         >
-            {!darkModeIcon ?
+            {darkModeIcon ?
                 <IoSunny className="text-2xl text"/>
                 :
                 <IoMoon className="text-2xl text"/>
             }
         </button>
     )
+}
+
+type DarkModeToggleProps = {
+    darkModeToggleLight: string
+    darkModeToggleDark: string
 }
 
 export default DarkModeToggle
