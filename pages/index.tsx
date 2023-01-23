@@ -7,6 +7,7 @@ import {GetServerSidePropsContext} from 'next'
 import {ContentDataType, getContentDataJson} from "../src/components/utils/ContentDataUtil";
 import {selectLangauge, SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
 import {useRouter} from "next/router";
+import ReactMarkdown from "react-markdown";
 
 
 type ContentData = {
@@ -100,9 +101,7 @@ function Index({pageContentData}: Props) {
 
                 <div className="p-6 mt-6">
                     <h2 className="text-accent font-bold text-xl">{pageContentData.content.textHeader}</h2>
-                    <p className="text pt-4">
-                        {pageContentData.content.textDescription}
-                    </p>
+                    <ReactMarkdown className="text pt-4">{pageContentData.content.textDescription}</ReactMarkdown>
                 </div>
 
                 <AnimationOnScroll animateIn="animate__fadeInUp">
