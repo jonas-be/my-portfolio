@@ -8,55 +8,50 @@
 @layer components {
 
 
-
     /* Text Colors */
-
     .text-accent {
         @apply
-        text-black dark:text-white
+        text-accent-200 dark:text-accent-200-dark
     }
 
     .text-accent-reverse {
         @apply
-        text-white dark:text-black
+        text-accent-100-dark dark:text-accent-100
     }
 
     .text {
         @apply
-        text-zinc-600 dark:text-zinc-400
+        text-accent-100 dark:text-accent-100-dark
     }
 
     .impress-text {
         @apply
-        bg-zinc-600 dark:bg-zinc-400
+        bg-accent-100 dark:bg-accent-100-dark
     }
 
     /* Background Colors */
-
     .bg {
         @apply
-        bg-white dark:bg-black
+        bg-base-0 dark:bg-base-0-dark
     }
 
     .bg-accent {
         @apply
-        bg-zinc-100/90 dark:bg-zinc-800/90 backdrop-blur-[1.25px]
+        bg-base-100 dark:bg-base-100-dark
     }
 
     .bg-accent-2 {
         @apply
-        bg-zinc-200/90 dark:bg-zinc-900/90 backdrop-blur-[1.25px]
+        bg-base-200 dark:bg-base-200-dark
     }
 
     .bg-reverse {
         @apply
-        bg-black dark:bg-white
+        bg-base-0-dark dark:bg-base-0
     }
 
 
-
     /* Utils */
-
     .focus-ring {
         @apply
         focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75
@@ -64,9 +59,7 @@
     }
 
 
-
     /* Button */
-
     .btn {
         @apply
         text-white font-medium
@@ -98,9 +91,7 @@
     }
 
 
-
     /* Link */
-
     .link {
         @apply
         hover:opacity-70 rounded focus-ring underline
@@ -112,11 +103,15 @@
     w-full
     h-full
     min-h-[100vh]
-    bg-white dark:bg-black
+    bg
 }
 
 .dela-gothi-one {
     font-family: 'Dela Gothic One', cursive;
+}
+
+html {
+    background: #000000;
 }
 
 body {
