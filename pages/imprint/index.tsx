@@ -42,7 +42,7 @@ function Index() {
 
             <div className="flex flex-col items-center gap-28 pb-20">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                     className="impress-text w-80 h-fit rounded-xl overflow-hidden text-accent-reverse "
+                     className="impress-text w-80 h-fit rounded-xl overflow-hidden"
                      width="316.000000pt" height="115.000000pt" viewBox="0 0 316.000000 115.000000"
                      preserveAspectRatio="xMidYMid meet">
 
