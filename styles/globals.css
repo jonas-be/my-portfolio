@@ -26,7 +26,7 @@
 
     .impress-text {
         @apply
-        bg-accent-100 dark:bg-accent-100-dark
+        bg-base-0-dark dark:bg-base-0 text-base-0 dark:text-base-0-dark
     }
 
     /* Background Colors */
