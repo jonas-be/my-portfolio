@@ -13,12 +13,18 @@
   "content": [
     // Only components in this body
     {
-      type: "header",
-      title: "..."
+      "type": "markdown",
+      "markdown": "# Heading\n\n - test\n - test2 ..."
     },
     {
-      type: "paragraph",
-      text: "..."
+      "type": "Video",
+      "url": "...",
+      "autoStart": true,
+      "loop": true
+    },
+    {
+      "type": "markdown",
+      "markdown": "\n\n - test\n - test2 ..."
     },
     ...
   ]
@@ -27,10 +33,9 @@
 
 ## Components
 
-- Header
-- Paragraph
-- HeroSection
-- Image
+- Markdown
+- Video
+- Image?
 - ImageCollection
 - ArticleCard
 - LabelList
