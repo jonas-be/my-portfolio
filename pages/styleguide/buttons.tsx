@@ -1,5 +1,5 @@
 import React from "react";
-import StyleGuideComponent from "../../src/components/common/StyleGuideComponent";
+import StyleGuideComponent from "../../src/components/styleguide/StyleGuideComponent";
 import {IoSunny} from "react-icons/io5";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import Skeleton from "../../src/components/skeleton/Skeleton";
