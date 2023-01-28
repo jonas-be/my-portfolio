@@ -2,6 +2,8 @@ import {GetServerSidePropsContext} from "next";
 
 export enum ContentDataType {
     PAGE = "pages",
+    PROJECT = "pages/projects",
+    LIST = "list",
     COMPONENT = "components/"
 }
 
@@ -13,7 +15,10 @@ export async function getContentDataJson(context: GetServerSidePropsContext, con
         lang = context.locale
     }
 
-    let contentUrl = `http://jonasbe.de:30300/${contentDataType}${path}/${lang}.json`
+    let contentUrl = contentDataType === ContentDataType.LIST ?
+        `http://jonasbe.de:30300/${path}/list.json`
+        :
+        `http://jonasbe.de:30300/${contentDataType}${path}/${lang}.json`
     console.log(contentUrl)
     let data = await fetch(contentUrl)
     if (data.ok) {
