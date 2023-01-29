@@ -6,6 +6,7 @@ import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticCo
 import {useRouter} from "next/router";
 import {getBlogId, ProjectLinkMapping} from "../../src/components/utils/BlogSystemUtil";
 import ReactMarkdown from "react-markdown";
+import SiteBuilder from "../../src/components/sitebuilder/SiteBuilder";
 
 
 type ContentData = {
@@ -48,15 +49,43 @@ function Project({blogId, pageContentData}: Props) {
     }, []);
 
     return (
-        <Skeleton title={"pageContentData.title"}
-                  content={"pageContentData.contentSEO"}
+        <Skeleton title={pageContentData.title}
+                  content={pageContentData.contentSEO}
                   gradient={true} bgGrid={false}
                   skeletonContentData={skeletonContentData}
                   router={router}>
 
-            {pageContentData.content.map(i =>
-                <p className="text pt-4">{i.type}</p>
-            )}
+            <SiteBuilder content={
+                [
+                    {
+                        "type": "heroSection",
+                        "imgUrl": "/assets/website-symbolic-icon-pixabay.png",
+                        "gradient": {
+                            "left": "#00000000",
+                            "right": "#8B5CF6FF"
+                        },
+                        "mainHeading": "Portfolio Seite",
+                        "introduction": "Diese Seite soll über mich informieren.\n\nZusätzlich kann man, hier Projekte von mir finden und mehr darüber erfahren."
+                    },
+                    {
+                        "type": "markdown",
+                        "markdown": "## Technologien\n\n"
+                    },
+                    {
+                        "type": "labelList",
+                        "labels": [
+                            "NextJs",
+                            "TailwindCss",
+                            "Nginx",
+                            "Kubernetes"
+                        ]
+                    },
+                    {
+                        "type": "markdown",
+                        "markdown": "Diese Website wurde mit NextJs und TailwindCss erstellt.\n\nÜber die Infrastruktur:\n\nDie Website läuft auf Kubernetes. Und der Inhalt wird in JSON-Dateien auf einem einfachen Nginx-Server bereitgestellt, der ebenfalls im Kubernetes-Cluster läuft."
+                    }
+                ]
+            }/>
 
 
         </Skeleton>
