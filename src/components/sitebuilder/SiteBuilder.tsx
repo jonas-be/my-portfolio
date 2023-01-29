@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from "react-markdown";
 import {ReactJSXElement} from "@emotion/react/types/jsx-namespace";
 import LabelList from "../common/LabelList";
+import HeroSection from "../common/HeroSection";
 
 const SiteBuilder = ({content}: Props) => {
     function getComponent(object: Record<string, object>): ReactJSXElement {
@@ -16,6 +17,16 @@ const SiteBuilder = ({content}: Props) => {
                 if (object.labels !== undefined && Array.isArray(object.labels))
                     return <LabelList labels={object.labels}/>
                 break;
+            case "heroSection":
+                if (object.imgUrl !== undefined &&
+                    object.mainHeading !== undefined &&
+                    object.introduction !== undefined
+                )
+                    return <HeroSection imgUrl={object.imgUrl.toString()}
+                                        mainHeading={object.mainHeading.toString()}
+                                        introduction={object.introduction.toString()}/>
+                break;
+
 
             default:
                 //statements;
