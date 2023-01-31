@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import {ReactJSXElement} from "@emotion/react/types/jsx-namespace";
 import LabelList from "../common/LabelList";
 import HeroSection from "../common/HeroSection";
+import LinkIconList from "../common/LinkIconList";
+import WidthLimit from "../common/WidthLimit";
 
 const SiteBuilder = ({content}: Props) => {
     function getComponent(object: Record<string, object>): ReactJSXElement {
@@ -11,7 +13,7 @@ const SiteBuilder = ({content}: Props) => {
         switch (object.type.toString()) {
             case "markdown":
                 if (object.markdown !== undefined)
-                    return <ReactMarkdown className="text pt-2" children={object.markdown.toString()}/>
+                    return <ReactMarkdown className="text p-2" children={object.markdown.toString()}/>
                 break;
             case "labelList":
                 if (object.labels !== undefined && Array.isArray(object.labels))
@@ -26,7 +28,16 @@ const SiteBuilder = ({content}: Props) => {
                                         mainHeading={object.mainHeading.toString()}
                                         introduction={object.introduction.toString()}/>
                 break;
-
+            case "linkList":
+                if (object.links !== undefined && Array.isArray(object.links)) { // @ts-ignore
+                    return <LinkIconList links={object.links}/>
+                }
+                break;
+            case "widthLimit":
+                if (object.children !== undefined && Array.isArray(object.children)) { // @ts-ignore
+                    return <WidthLimit>{object.children}</WidthLimit>
+                }
+                break;
 
             default:
                 //statements;
@@ -38,7 +49,7 @@ const SiteBuilder = ({content}: Props) => {
 
 
     return (
-        <div className="p-3 sm:p-6">
+        <div>
             {content.map(i => getComponent(i))}
         </div>
     );

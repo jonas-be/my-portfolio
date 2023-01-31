@@ -60,29 +60,37 @@ function Project({blogId, pageContentData}: Props) {
                     {
                         "type": "heroSection",
                         "imgUrl": "/assets/website-symbolic-icon-pixabay.png",
-                        "gradient": {
-                            "left": "#00000000",
-                            "right": "#8B5CF6FF"
-                        },
                         "mainHeading": "Portfolio Seite",
                         "introduction": "Diese Seite soll über mich informieren.\n\nZusätzlich kann man, hier Projekte von mir finden und mehr darüber erfahren."
                     },
                     {
-                        "type": "markdown",
-                        "markdown": "## Technologien\n\n"
-                    },
-                    {
-                        "type": "labelList",
-                        "labels": [
-                            "NextJs",
-                            "TailwindCss",
-                            "Nginx",
-                            "Kubernetes"
+                        "type": "linkList",
+                        "links": [
+                            {"icon": "link", "text": "Website", "link": "https://jonasbe.de"},
+                            {"icon": "github", "text": "Github", "link": "https://github.com/jonas-be/my-protfolio"}
                         ]
                     },
                     {
-                        "type": "markdown",
-                        "markdown": "Diese Website wurde mit NextJs und TailwindCss erstellt.\n\nÜber die Infrastruktur:\n\nDie Website läuft auf Kubernetes. Und der Inhalt wird in JSON-Dateien auf einem einfachen Nginx-Server bereitgestellt, der ebenfalls im Kubernetes-Cluster läuft."
+                        "type": "widthLimit",
+                        "children": [
+                            {
+                                "type": "markdown",
+                                "markdown": "## Technologien\n\n"
+                            },
+                            {
+                                "type": "labelList",
+                                "labels": [
+                                    "NextJs",
+                                    "TailwindCss",
+                                    "Nginx",
+                                    "Kubernetes"
+                                ]
+                            },
+                            {
+                                "type": "markdown",
+                                "markdown": "Diese Website wurde mit NextJs und TailwindCss erstellt.\n\nÜber die Infrastruktur:\n\nDie Website läuft auf Kubernetes. Und der Inhalt wird in JSON-Dateien auf einem einfachen Nginx-Server bereitgestellt, der ebenfalls im Kubernetes-Cluster läuft."
+                            }
+                        ]
                     }
                 ]
             }/>
