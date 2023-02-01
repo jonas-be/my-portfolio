@@ -5,7 +5,6 @@ import {ContentDataType, getContentDataJson} from "../../src/components/utils/Co
 import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
 import {useRouter} from "next/router";
 import {getBlogId, ProjectLinkMapping} from "../../src/components/utils/BlogSystemUtil";
-import ReactMarkdown from "react-markdown";
 import SiteBuilder from "../../src/components/sitebuilder/SiteBuilder";
 
 
@@ -77,14 +76,14 @@ function Project({blogId, pageContentData}: Props) {
                                 "type": "labelList",
                                 "labels": [
                                     "NextJs",
-                                    "TailwindCss",
+                                    "TailwindCSS",
                                     "Nginx",
                                     "Kubernetes"
                                 ]
                             },
                             {
                                 "type": "markdown",
-                                "markdown": "Diese Website wurde mit NextJs und TailwindCss erstellt.\n\nÜber die Infrastruktur:\n\nDie Website läuft auf Kubernetes. Und der Inhalt wird in JSON-Dateien auf einem einfachen Nginx-Server bereitgestellt, der ebenfalls im Kubernetes-Cluster läuft."
+                                "markdown": "Diese Website wurde mit NextJs und TailwindCSS erstellt.\n\nÜber die Infrastruktur:\n\nDie Website läuft auf Kubernetes. Und der Inhalt wird in JSON-Dateien auf einem einfachen Nginx-Server bereitgestellt, der ebenfalls im Kubernetes-Cluster läuft."
                             }
                         ]
                     }

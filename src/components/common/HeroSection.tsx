@@ -12,7 +12,7 @@ const HeroSection = ({imgUrl, mainHeading, introduction, mainButtonText, mainBut
                 <ReactMarkdown className="text pt-2" children={introduction}/>
             <div className="pt-4 flex gap-2">
                 <Link className="btn bg-primary font-bold" href={mainButtonLink}>{mainButtonText}</Link>
-                <Link className="btn bg-[#333]" href={githubLink}><FaGithub/></Link>
+                <Link className="btn bg-[#333] text-lg" href={githubLink}><FaGithub/></Link>
 
             </div>
             </div>
