@@ -1,6 +1,7 @@
 import React from 'react';
-import {SiKubernetes, SiNginx, SiTailwindcss} from "react-icons/si";
+import {SiKubernetes, SiNginx, SiTailwindcss, SiTypescript} from "react-icons/si";
 import {TbBrandNextjs} from "react-icons/tb";
+import {FaDiscord} from "react-icons/fa";
 
 const LabelList = ({labels}: Props) => {
 
@@ -20,6 +21,14 @@ const LabelList = ({labels}: Props) => {
             case "kubernetes" :
             case "k8s":
                 return <SiKubernetes/>
+
+            case "discord":
+            case "dc":
+                return <FaDiscord/>
+
+            case "typescript":
+            case "ts":
+                return <SiTypescript/>
 
             default:
                 return <div></div>
