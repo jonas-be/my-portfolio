@@ -1,5 +1,5 @@
 import React from "react";
-import StyleGuideComponent from "../../src/components/common/StyleGuideComponent";
+import StyleGuideComponent from "../../src/components/styleguide/StyleGuideComponent";
 import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
 import Link from "next/link";
 import Skeleton from "../../src/components/skeleton/Skeleton";
