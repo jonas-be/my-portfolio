@@ -7,7 +7,8 @@ import {FaDiscord, FaGithub} from "react-icons/fa";
 
 const HeroSection = ({imgUrl, mainHeading, introduction, mainButtonText, mainButtonLink, githubLink}: HeroSectionProps) => {
     return (
-        <div className="flex flex-col-reverse md:flex-row items-center justify-center p-3 sm:p-6 pb-8 md:pb-0">            <div>
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center p-3 sm:p-6 pb-28 md:pb-0 ">
+            <div>
                 <h1 className="pt-2">{mainHeading}</h1>
                 <ReactMarkdown className="text pt-2" children={introduction}/>
             <div className="pt-4 flex gap-2">
