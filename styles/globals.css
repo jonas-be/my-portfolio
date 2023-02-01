@@ -5,8 +5,7 @@
 @tailwind utilities;
 
 
-@layer components {
-
+@layer utilities {
 
     /* Text Colors */
     .text-accent {
@@ -50,6 +49,9 @@
         bg-base-0-dark dark:bg-base-0
     }
 
+}
+
+@layer components {
 
     /* Utils */
     .focus-ring {
@@ -95,6 +97,18 @@
     .link {
         @apply
         hover:opacity-70 rounded focus-ring underline
+    }
+}
+
+@layer base {
+    h1 {
+        @apply text-2xl font-bold text-accent;
+    }
+    h2 {
+        @apply text-xl font-bold text-accent;
+    }
+    h3 {
+        @apply text-lg font-bold text-accent;
     }
 }
 
