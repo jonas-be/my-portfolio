@@ -22,11 +22,18 @@ const SiteBuilder = ({content}: Props) => {
             case "heroSection":
                 if (object.imgUrl !== undefined &&
                     object.mainHeading !== undefined &&
-                    object.introduction !== undefined
+                    object.introduction !== undefined &&
+                    object.mainButtonText !== undefined &&
+                    object.mainButtonLink !== undefined &&
+                    object.githubLink !== undefined
                 )
                     return <HeroSection imgUrl={object.imgUrl.toString()}
                                         mainHeading={object.mainHeading.toString()}
-                                        introduction={object.introduction.toString()}/>
+                                        introduction={object.introduction.toString()}
+                                        mainButtonLink={object.mainButtonLink.toString()}
+                                        mainButtonText={object.mainButtonText.toString()}
+                                        githubLink={object.githubLink.toString()}
+                    />
                 break;
             case "linkList":
                 if (object.links !== undefined && Array.isArray(object.links)) { // @ts-ignore

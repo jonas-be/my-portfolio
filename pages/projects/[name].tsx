@@ -61,14 +61,10 @@ function Project({blogId, pageContentData}: Props) {
                         "type": "heroSection",
                         "imgUrl": "/assets/website-symbolic-icon-pixabay.png",
                         "mainHeading": "Portfolio Seite",
-                        "introduction": "Diese Seite soll über mich informieren.\n\nZusätzlich kann man, hier Projekte von mir finden und mehr darüber erfahren."
-                    },
-                    {
-                        "type": "linkList",
-                        "links": [
-                            {"icon": "link", "text": "Website", "link": "https://jonasbe.de"},
-                            {"icon": "github", "text": "Github", "link": "https://github.com/jonas-be/my-protfolio"}
-                        ]
+                        "introduction": "Diese Seite soll über mich informieren.\n\nZusätzlich kann man, hier Projekte von mir finden und mehr darüber erfahren.",
+                        "mainButtonText": "View Now",
+                        "mainButtonLink": "https://jonasbe.de",
+                        "githubLink": "https://github.com/jonas-be/my-portfolio"
                     },
                     {
                         "type": "widthLimit",
