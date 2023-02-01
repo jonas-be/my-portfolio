@@ -16,7 +16,7 @@ export async function getContentDataJson(context: GetServerSidePropsContext, con
     }
 
     let contentUrl = contentDataType === ContentDataType.LIST ?
-        `http://jonasbe.de:30300/${path}/list.json`
+        `http://jonasbe.de:30300/${path}/list/${lang}.json`
         :
         `http://jonasbe.de:30300/${contentDataType}${path}/${lang}.json`
     console.log(contentUrl)
