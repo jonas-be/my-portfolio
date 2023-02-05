@@ -8,7 +8,9 @@ const ProjectList = ({baseUrl, list}: Props) => {
 
     return (
         <ul>
-            <h2 className="p-10 pb-4 text-3xl">Projects</h2>
+            <Link href="/projects">
+                <h2 className="p-10 pb-4 text-3xl">Projects</h2>
+            </Link>
             {list.map(i =>
                 <li className="flex flex-col odd:md:flex-row even:md:flex-row-reverse items-center md:justify-between w-full m-4 p-4 pb-16 rounded-xl">
                     <Link href={baseUrl + "/" + i.primaryLink} className="px-10">
