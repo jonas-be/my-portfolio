@@ -1,10 +1,10 @@
 import React from 'react';
 import SiteBuilder from "../sitebuilder/SiteBuilder";
 
-const WidthLimit = ({children, siteBuilder}: Props) => {
+const WidthLimit = ({children, siteBuilder, maxWidthClassNames}: Props) => {
     return (
         <div className="flex justify-center p-3 sm:p-6">
-            <div className="max-w-[60rem] xl:max-w-[70rem]">
+            <div className={maxWidthClassNames === undefined ? "max-w-[60rem] xl:max-w-[70rem]" : maxWidthClassNames}>
                 {siteBuilder ?
                     <SiteBuilder content={children}/>
                     :
@@ -14,5 +14,9 @@ const WidthLimit = ({children, siteBuilder}: Props) => {
         </div>
     );
 };
-type Props = { children: any, siteBuilder?: boolean };
+type Props = {
+    children: any,
+    siteBuilder?: boolean
+    maxWidthClassNames?: string
+};
 export default WidthLimit;

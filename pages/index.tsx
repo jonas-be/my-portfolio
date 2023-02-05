@@ -76,7 +76,7 @@ function Index({pageContentData, projects}: Props) {
                   gradient={true} bgGrid={true}
                   skeletonContentData={skeletonContentData}
                   router={router}>
-            <WidthLimit>
+            <WidthLimit maxWidthClassNames="max-w-[70rem] xl:max-w-[90rem]">
 
                 <MouseParallaxContainer
                     className="w-full h-[60vh] flex flex-col justify-center align-center"
@@ -104,7 +104,7 @@ function Index({pageContentData, projects}: Props) {
 
 
                 <div
-                    className="flex flex-col lg:flex-row sm:mx-8 lg:mx-14 xl:mx-24 lg:gap-20 justify-center items-center lg:items-start ">
+                    className="flex flex-col lg:flex-row sm:mx-8 lg:mx-14 xl:mx-24 mb-10 lg:gap-20 justify-center items-center lg:items-start">
 
                     <div className="p-6 mt-6">
                         <h2 className="text-accent font-bold text-xl">{pageContentData.content.textHeader}</h2>
