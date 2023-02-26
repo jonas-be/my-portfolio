@@ -1,8 +1,9 @@
 import {IoMdGlobe} from "react-icons/io";
 
-import {Dialog, Transition} from '@headlessui/react'
+import {Dialog, RadioGroup, Transition} from '@headlessui/react'
 import React, {Fragment, useState} from 'react'
 import {NextRouter} from "next/router";
+import {ImRadioChecked, ImRadioUnchecked} from "react-icons/im";
 
 export default function LanguageToggle({openLabel, title, languages, done, router}: LanguageToggleProps) {
     let [isOpen, setIsOpen] = useState(false)
@@ -21,7 +22,6 @@ export default function LanguageToggle({openLabel, title, languages, done, route
 
     return (
         <>
-
             <button
                 onClick={openModal}
                 className="btn p-2.5 flex justify-center items-center"
@@ -55,18 +55,23 @@ export default function LanguageToggle({openLabel, title, languages, done, route
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel
-                                    className="w-full max-w-md transform overflow-hidden rounded-2xl bg-accent p-6 text-left align-middle shadow-xl transition-all">
+                                    className="w-full max-w-md transform overflow-hidden rounded-2xl bg-accent-2 p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
                                         as="h3"
                                         className="text-accent text-lg font-medium leading-6"
                                     >
                                         {title}
                                     </Dialog.Title>
+
+
                                     <div className="mt-2">
                                         {languages.map(lang =>
                                             <button key={lang.id} onClick={() => changeLocale(lang.id)}
-                                                    className="btn bg-accent-2 w-full m-1 text">
-                                                {lang.name}</button>
+                                                    className={`btn bg-accent w-full justify-between m-1 text `}>
+                                                {lang.id === router.locale ? <ImRadioChecked className="text-info text-lg w-4"/> : <ImRadioUnchecked className={"text text-lg w-4"}/>}
+                                                {lang.name}
+                                                <div className="w-4"/>
+                                            </button>
                                         )}
                                     </div>
 

@@ -15,7 +15,7 @@ const Skeleton = ({title, content, gradient, bgGrid, skeletonContentData, childr
                 <meta name="description" content={content}/>
             </Head>
 
-            <div id="background" className="w-full h-full">
+            <div className="w-full h-full">
 
                 {bgGrid ? <BackgroundGrid/> : ""}
 

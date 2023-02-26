@@ -56,8 +56,9 @@
     /* Utils */
     .focus-ring {
         @apply
+        outline-none
         focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75
-        focus-visible:ring-black dark:focus-visible:ring-white
+        focus-visible:ring-accent-200 dark:focus-visible:ring-accent-200-dark
     }
 
 
@@ -97,6 +98,38 @@
     .link {
         @apply
         hover:opacity-70 rounded focus-ring underline
+    }
+
+    /* Range */
+    .range {
+        width: 400px;
+        height: 10px;
+        -webkit-appearance: none;
+        background: #111;
+        outline: none;
+        border-radius: 15px;
+        overflow: hidden;
+        @apply
+        bg-accent
+    }
+    .range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        @apply
+        bg-primary shadow-slider shadow-primary
+    }
+
+    .range::-moz-range-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        @apply
+        bg-primary border-none shadow-slider shadow-primary
     }
 }
 

@@ -18,7 +18,7 @@ const HeroSection = ({imgUrl, mainHeading, introduction, mainButtonText, mainBut
             </div>
             </div>
             <div>
-                <Image src={imgUrl} alt="symbolic project icon" width="400" height="0" />
+                <img src={imgUrl} alt="symbolic project icon" width="400" height="0" />
             </div>
         </div>
     );

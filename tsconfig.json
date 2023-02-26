@@ -22,7 +22,7 @@
     "incremental": true
   },
   "include": [
-    "src"
+    "components"
   ],
   "exclude": [
     "node_modules"

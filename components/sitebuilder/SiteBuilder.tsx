@@ -42,7 +42,7 @@ const SiteBuilder = ({content}: Props) => {
                 break;
             case "widthLimit":
                 if (object.children !== undefined && Array.isArray(object.children)) { // @ts-ignore
-                    return <WidthLimit>{object.children}</WidthLimit>
+                    return <WidthLimit siteBuilder={true}>{object.children}</WidthLimit>
                 }
                 break;
 
