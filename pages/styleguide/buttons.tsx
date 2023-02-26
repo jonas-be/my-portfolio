@@ -1,14 +1,14 @@
 import React from "react";
-import StyleGuideComponent from "../../src/components/styleguide/StyleGuideComponent";
+import StyleGuideComponent from "../../components/styleguide/StyleGuideComponent";
 import {IoSunny} from "react-icons/io5";
-import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
-import Skeleton from "../../src/components/skeleton/Skeleton";
+import BreadcrumbNavigation from "../../components/common/BreadcrumbNavigation";
+import Skeleton from "../../components/skeleton/Skeleton";
 import {useRouter} from "next/router";
-import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
+import {selectLanguage, SKELETON_DATA} from "../../components/utils/StaticContentUtil";
 
 function Index() {
     const router = useRouter()
-    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const skeletonContentData = selectLanguage(SKELETON_DATA, router.locale)
 
 
     return (

@@ -1,16 +1,16 @@
 import React from "react";
-import Header from "../../src/components/nav/Header";
-import Footer from "../../src/components/nav/Footer";
+import Header from "../../components/nav/Header";
+import Footer from "../../components/nav/Footer";
 import Link from "next/link";
-import BreadcrumbNavigation from "../../src/components/common/BreadcrumbNavigation";
+import BreadcrumbNavigation from "../../components/common/BreadcrumbNavigation";
 import {IoSunny} from "react-icons/io5";
-import Skeleton from "../../src/components/skeleton/Skeleton";
+import Skeleton from "../../components/skeleton/Skeleton";
 import {useRouter} from "next/router";
-import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
+import {selectLanguage, SKELETON_DATA} from "../../components/utils/StaticContentUtil";
 
 function Index() {
     const router = useRouter()
-    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const skeletonContentData = selectLanguage(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={"Styleguide"} content="Styleguide"

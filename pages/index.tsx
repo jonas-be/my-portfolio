@@ -2,15 +2,15 @@ import {MouseParallaxChild, MouseParallaxContainer} from "react-parallax-mouse";
 import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
-import Skeleton, {SkeletonContentData} from "../src/components/skeleton/Skeleton";
+import Skeleton, {SkeletonContentData} from "../components/skeleton/Skeleton";
 import {GetServerSidePropsContext} from 'next'
-import {ContentDataType, getContentDataJson} from "../src/components/utils/ContentDataUtil";
-import {selectLangauge, SKELETON_DATA} from "../src/components/utils/StaticContentUtil";
+import {ContentDataType, getContentDataJson} from "../components/utils/ContentDataUtil";
+import {selectLanguage, SKELETON_DATA} from "../components/utils/StaticContentUtil";
 import {useRouter} from "next/router";
 import ReactMarkdown from "react-markdown";
-import ProjectList from "../src/components/common/ProjectList";
-import {ProjectLinkMapping} from "../src/components/utils/BlogSystemUtil";
-import WidthLimit from "../src/components/common/WidthLimit";
+import ProjectList from "../components/common/ProjectList";
+import {ProjectLinkMapping} from "../components/utils/BlogSystemUtil";
+import WidthLimit from "../components/common/WidthLimit";
 
 
 type ContentData = {
@@ -68,7 +68,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 function Index({pageContentData, projects}: Props) {
 
     const router = useRouter()
-    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const skeletonContentData = selectLanguage(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={pageContentData.title}

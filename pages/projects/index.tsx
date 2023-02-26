@@ -1,10 +1,10 @@
-import Skeleton from "../../src/components/skeleton/Skeleton";
+import Skeleton from "../../components/skeleton/Skeleton";
 import {useRouter} from "next/router";
-import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
-import ProjectList from "../../src/components/common/ProjectList";
+import {selectLanguage, SKELETON_DATA} from "../../components/utils/StaticContentUtil";
+import ProjectList from "../../components/common/ProjectList";
 import {GetServerSidePropsContext} from "next";
-import {ProjectLinkMapping} from "../../src/components/utils/BlogSystemUtil";
-import {ContentDataType, getContentDataJson} from "../../src/components/utils/ContentDataUtil";
+import {ProjectLinkMapping} from "../../components/utils/BlogSystemUtil";
+import {ContentDataType, getContentDataJson} from "../../components/utils/ContentDataUtil";
 
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -19,7 +19,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 const Projects = ({projects}: Props) => {
     const router = useRouter()
-    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const skeletonContentData = selectLanguage(SKELETON_DATA, router.locale)
 
     return (
         <Skeleton title={"Projects"}

@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
-import Skeleton from "../../src/components/skeleton/Skeleton";
+import Skeleton from "../../components/skeleton/Skeleton";
 import {GetServerSidePropsContext} from 'next'
-import {ContentDataType, getContentDataJson} from "../../src/components/utils/ContentDataUtil";
-import {selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
+import {ContentDataType, getContentDataJson} from "../../components/utils/ContentDataUtil";
+import {selectLanguage, SKELETON_DATA} from "../../components/utils/StaticContentUtil";
 import {useRouter} from "next/router";
-import {getBlogId, ProjectLinkMapping} from "../../src/components/utils/BlogSystemUtil";
-import SiteBuilder from "../../src/components/sitebuilder/SiteBuilder";
+import {getBlogId, ProjectLinkMapping} from "../../components/utils/BlogSystemUtil";
+import SiteBuilder from "../../components/sitebuilder/SiteBuilder";
 
 
 type ContentData = {
@@ -39,7 +39,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 function Project({blogId, pageContentData}: Props) {
 
     const router = useRouter()
-    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
+    const skeletonContentData = selectLanguage(SKELETON_DATA, router.locale)
 
     useEffect(() => {
         router.query.name = blogId.primaryLink

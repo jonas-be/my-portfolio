@@ -2,8 +2,8 @@ import {MouseParallaxChild, MouseParallaxContainer} from "react-parallax-mouse";
 import React from "react";
 import {AnimationOnScroll} from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
-import Skeleton from "../../src/components/skeleton/Skeleton";
-import {IMPRINT_PAGE_DATA, selectLangauge, SKELETON_DATA} from "../../src/components/utils/StaticContentUtil";
+import Skeleton from "../../components/skeleton/Skeleton";
+import {IMPRINT_PAGE_DATA, selectLanguage, SKELETON_DATA} from "../../components/utils/StaticContentUtil";
 import {FiInfo} from "react-icons/fi";
 import {useRouter} from 'next/router'
 
@@ -12,8 +12,8 @@ function Index() {
 
     const router = useRouter()
 
-    const skeletonContentData = selectLangauge(SKELETON_DATA, router.locale)
-    const pageContentData = selectLangauge(IMPRINT_PAGE_DATA, router.locale)
+    const skeletonContentData = selectLanguage(SKELETON_DATA, router.locale)
+    const pageContentData = selectLanguage(IMPRINT_PAGE_DATA, router.locale)
 
 
     return (
