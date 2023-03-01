@@ -12,7 +12,7 @@ function Options({labels, languageToggle, router}: OptionProps) {
     function optionDiv() {
         return (
             <div
-                className='bg-accent-2 shadow-md sm:shadow-none rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
+                className='bg-accent-2 shadow-md shadow-md rounded-2xl sm:static sm:flex flex-col sm:flex-row'>
                 <DarkModeToggle darkModeToggleDark={labels.darkModeToggleDark}
                                 darkModeToggleLight={labels.darkModeToggleLight}/>
 

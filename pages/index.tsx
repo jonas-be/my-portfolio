@@ -87,7 +87,7 @@ function Index({pageContentData, projects}: Props) {
                     <h1>
                         <MouseParallaxChild factorX={0.15} factorY={0.15}>
                             <AnimationOnScroll animateIn="animate__slideInDown"
-                                               className='text-fuchsia-400 text-center text-4xl font-bold'>
+                                               className='text-primary text-center text-4xl font-bold'>
                                 <i>{pageContentData.content.heroFirstLine}</i>
                             </AnimationOnScroll>
                         </MouseParallaxChild>

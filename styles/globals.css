@@ -49,6 +49,13 @@
         bg-base-0-dark dark:bg-base-0
     }
 
+    .bg-gradient {
+        background: linear-gradient(125deg, theme('colors.primary / 25%') 0%, theme('colors.primary / 5%') 34%, theme('colors.primary / 0%') 51%, theme('colors.secondary / 5%') 74%, theme('colors.secondary / 25%') 100%)
+    }
+
+    .bg-gradient-reverse {
+        background: linear-gradient(125deg, theme('colors.secondary / 25%') 0%, theme('colors.secondary / 5%') 34%, theme('colors.primary / 0%') 51%, theme('colors.primary / 5%') 74%, theme('colors.primary / 25%') 100%)
+    }
 }
 
 @layer components {
@@ -112,6 +119,7 @@
         @apply
         bg-accent
     }
+
     .range::-webkit-slider-thumb {
         -webkit-appearance: none;
         width: 10px;
@@ -137,9 +145,11 @@
     h1 {
         @apply text-2xl font-bold text-accent;
     }
+
     h2 {
         @apply text-xl font-bold text-accent;
     }
+
     h3 {
         @apply text-lg font-bold text-accent;
     }

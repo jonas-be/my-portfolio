@@ -6,7 +6,16 @@ import Header, {HeaderProps} from "../nav/Header";
 import Footer from "../nav/Footer";
 
 
-const Skeleton = ({title, content, gradient, bgGrid, skeletonContentData, children, router}: SkeletonProps) => {
+const Skeleton = ({
+                      title,
+                      content,
+                      gradient,
+                      gradientReverse,
+                      bgGrid,
+                      skeletonContentData,
+                      children,
+                      router
+                  }: SkeletonProps) => {
 
     return (
         <>
@@ -19,8 +28,10 @@ const Skeleton = ({title, content, gradient, bgGrid, skeletonContentData, childr
 
                 {bgGrid ? <BackgroundGrid/> : ""}
 
-                <div className="w-screen h-full"
-                     style={gradient ? {minHeight: "100vh", background: "linear-gradient(125deg, rgba(99,102,241,.25) 0%, rgba(49,46,129,.05) 34%, rgba(45,49,131,0) 51%, rgba(30,58,138,.05) 74%, rgba(232,121,240,.25) 100%)"} : {}}>
+                <div className={`w-screen h-full
+                    ${gradient ? gradientReverse ? "bg-gradient-reverse" : "bg-gradient" : ""}
+                    `}
+                >
                     <Header logoTitle={skeletonContentData.header.logoTitle}
                             options={skeletonContentData.header.options}
                             router={router}
@@ -44,6 +55,7 @@ type SkeletonProps = {
     title: string
     content: string
     gradient: boolean
+    gradientReverse?: boolean
     bgGrid: boolean
     children: any
     router: NextRouter
