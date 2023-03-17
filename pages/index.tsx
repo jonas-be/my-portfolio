@@ -11,6 +11,8 @@ import ReactMarkdown from "react-markdown";
 import ProjectList from "../components/common/ProjectList";
 import {ProjectLinkMapping} from "../components/utils/BlogSystemUtil";
 import WidthLimit from "../components/common/WidthLimit";
+import CodeStyle from "../components/styleguide/CodeStyle";
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 
 type ContentData = {
@@ -78,29 +80,12 @@ function Index({pageContentData, projects}: Props) {
                   router={router}>
             <WidthLimit maxWidthClassNames="max-w-[70rem] xl:max-w-[90rem]">
 
-                <MouseParallaxContainer
-                    className="w-full h-[60vh] flex flex-col justify-center align-center"
-                    globalFactorX={0.2} globalFactorY={0.0}
-                    resetOnLeave
-                    inverted={true}>
+                <h1>
+                    <i className="text-primary">{pageContentData.content.heroFirstLine}</i>
+                    <span> {pageContentData.content.heroSecondLine}</span>
+                </h1>
 
-                    <h1>
-                        <MouseParallaxChild factorX={0.15} factorY={0.15}>
-                            <AnimationOnScroll animateIn="animate__slideInDown"
-                                               className='text-primary text-center text-4xl font-bold'>
-                                <i>{pageContentData.content.heroFirstLine}</i>
-                            </AnimationOnScroll>
-                        </MouseParallaxChild>
 
-                        <MouseParallaxChild factorX={0.1} factorY={0.1}>
-                            <AnimationOnScroll animateIn="animate__pulse" delay={300} initiallyVisible={true}
-                                               className='text-accent text-center text-8xl font-bold p-3'>
-                                {pageContentData.content.heroSecondLine}
-                            </AnimationOnScroll>
-                        </MouseParallaxChild>
-                    </h1>
-
-                </MouseParallaxContainer>
 
 
                 <div
@@ -111,37 +96,15 @@ function Index({pageContentData, projects}: Props) {
                         <ReactMarkdown className="text pt-4">{pageContentData.content.textDescription}</ReactMarkdown>
                     </div>
 
-                    <AnimationOnScroll animateIn="animate__fadeInUp">
-                        <div className="bg-accent-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
-                            <table className="max-w-sm">
-                                <caption
-                                    className="text-accent text-lg pb-6">{pageContentData.content.aboutMe.header}</caption>
-                                <tbody>
-                                <tr>
-                                    <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Name:</td>
-                                    <td className="text min-w-[5rem]">{pageContentData.content.aboutMe.name}</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Aka:</td>
-                                    <td className="text min-w-[5rem]">{pageContentData.content.aboutMe.aka}</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Age:</td>
-                                    <td className="text">{pageContentData.content.aboutMe.age}</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Location:</td>
-                                    <td className="text">{pageContentData.content.aboutMe.location}</td>
-                                </tr>
-                                <tr>
-                                    <td className="text-accent text-right font-bold py-4 pr-2 sm:pr-4">Job:</td>
-                                    <td className="text ">{pageContentData.content.aboutMe.job}</td>
-                                    <td className=" w-10 sm:w-16 h-2"></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                        <div className="z-20 bg-zinc-800 border-1 border-zinc-700 w-max p-6 m-2 sm:m-4 rounded-4xl">
+                            <h2 className="px-1 pb-2 mb-1 border-b-1 border-zinc-700">
+                                <span className="text-accent">{pageContentData.content.aboutMe.name}</span>
+                                <i className="text-sm text">.json</i>
+                            </h2>
+                            <SyntaxHighlighter language="json" style={CodeStyle}>
+                                {JSON.stringify(pageContentData.content.aboutMe).replaceAll(",", ",\n\t").replaceAll(":", " : ").replace("{", "{\n\t").replace("}", "\n}")}
+                            </SyntaxHighlighter>
                         </div>
-                    </AnimationOnScroll>
                 </div>
 
                 <ProjectList baseUrl="/projects" list={projects.list}/>

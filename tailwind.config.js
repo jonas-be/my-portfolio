@@ -8,6 +8,9 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      borderWidth: {
+        '1': '1px'
+      },
       borderRadius: {
         '4xl': '2rem',
         '5xl': '3rem',
