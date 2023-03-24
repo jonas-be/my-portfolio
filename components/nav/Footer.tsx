@@ -5,7 +5,7 @@ import Link from "next/link";
 function Footer({endOfSiteHeader, githubLink, discordLink, impress, copyright}: FooterProps) {
     return (
         <footer className=''>
-            <div className="bg-base-2">
+            <div className="bg border-t-1 border-base-2 z-30 relative">
                 <p className='text-accent font-bold text-xl text-center p-3'>{endOfSiteHeader}</p>
 
                 <Link href='https://github.com/jonas-be'

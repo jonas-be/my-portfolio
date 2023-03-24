@@ -153,15 +153,18 @@
 
 @layer base {
     h1 {
-        @apply text-2xl font-bold text-accent;
+        @apply text-3xl font-bold text-accent;
     }
 
     h2 {
-        @apply text-xl font-bold text-accent;
+        @apply text-2xl font-bold text-accent;
     }
 
     h3 {
-        @apply text-lg font-bold text-accent;
+        @apply text-xl font-bold text-accent;
+    }
+    p {
+        @apply text-lg;
     }
 }
 

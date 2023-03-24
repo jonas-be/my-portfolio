@@ -50,7 +50,7 @@ function Project({blogId, pageContentData}: Props) {
     return (
         <Skeleton title={pageContentData.title}
                   content={pageContentData.contentSEO}
-                  gradient={false} bgGrid={false}
+                  gradient={true} bgGrid={false}
                   skeletonContentData={skeletonContentData}
                   router={router}>
 
@@ -74,6 +74,7 @@ function Project({blogId, pageContentData}: Props) {
                                     {
                                         "type": "labelList",
                                         "labels": [
+                                            "Typescript",
                                             "NextJs",
                                             "TailwindCSS",
                                             "Nginx",
