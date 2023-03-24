@@ -2,6 +2,7 @@ import React from 'react';
 import {SiKubernetes, SiNginx, SiTailwindcss, SiTypescript} from "react-icons/si";
 import {TbBrandNextjs} from "react-icons/tb";
 import {FaDiscord} from "react-icons/fa";
+import Link from "next/link";
 
 const LabelList = ({labels}: Props) => {
 
@@ -89,13 +90,13 @@ const LabelList = ({labels}: Props) => {
                             transition: .3s ease-in-out;
                         }`}
                 </style>
-                <a key={i} href={branding.link}
+                <Link key={i} href={branding.link}
                    className={`inline-flex items-center gap-1.5 p-0.5 m-0.5 px-2 rounded-full border-base ${branding.border ? "border-1" : ""} bg-base ${i} text-sm text`}>
                     <span className="text-lg">
                         {branding.icon}
                     </span>
                     {branding.name}
-                </a>
+                </Link>
             </>
         )
     }
