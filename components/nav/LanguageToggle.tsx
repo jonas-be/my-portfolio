@@ -5,8 +5,8 @@ import React, {Fragment, useState} from 'react'
 import {NextRouter} from "next/router";
 import {ImRadioChecked, ImRadioUnchecked} from "react-icons/im";
 
-export default function LanguageToggle({openLabel, title, languages, done, router}: LanguageToggleProps) {
-    let [isOpen, setIsOpen] = useState(false)
+export default function LanguageToggle({openLabel, title, languages, done, router, isOpen, setIsOpen}: LanguageToggleProps) {
+    // let [isOpen, setIsOpen] = useState(false)
 
     function changeLocale(lang: string) {
         router.push({}, router.asPath, {locale: lang})
@@ -22,12 +22,6 @@ export default function LanguageToggle({openLabel, title, languages, done, route
 
     return (
         <>
-            <button
-                onClick={openModal}
-                className="btn p-2.5 flex justify-center items-center"
-                title={openLabel}>
-                <IoMdGlobe className="text-2xl text"/>
-            </button>
 
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -40,7 +34,7 @@ export default function LanguageToggle({openLabel, title, languages, done, route
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-black bg-opacity-25"/>
+                        <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm"/>
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-y-auto">
@@ -55,7 +49,7 @@ export default function LanguageToggle({openLabel, title, languages, done, route
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel
-                                    className="w-full max-w-md transform overflow-hidden rounded-2xl bg-accent-2 p-6 text-left align-middle shadow-xl transition-all">
+                                    className="w-full max-w-md transform overflow-hidden rounded-2xl bg-base-2 p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
                                         as="h3"
                                         className="text-accent text-lg font-medium leading-6"
@@ -96,4 +90,6 @@ export type LanguageToggleProps = {
     languages: { id: string, name: string }[]
     done: string
     router: NextRouter
+    isOpen: boolean
+    setIsOpen: any
 }

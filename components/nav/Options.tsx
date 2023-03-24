@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import DarkModeToggle from './DarkModeToggle'
 import IconLinkButton from './IconLinkButton'
 import {FaDiscord, FaGithub} from "react-icons/fa";
@@ -6,8 +6,10 @@ import {IoMenu} from "react-icons/io5";
 import LanguageToggle, {LanguageToggleProps} from "./LanguageToggle";
 import {NextRouter} from "next/router";
 import {Popover} from "@headlessui/react";
+import {IoMdGlobe} from "react-icons/io";
 
 function Options({labels, languageToggle, router}: OptionProps) {
+    let [isLanguagePopUpOpen, setIsLanguagePopUpOpen] = useState(false)
 
     function optionDiv() {
         return (
@@ -16,11 +18,13 @@ function Options({labels, languageToggle, router}: OptionProps) {
                 <DarkModeToggle darkModeToggleDark={labels.darkModeToggleDark}
                                 darkModeToggleLight={labels.darkModeToggleLight}/>
 
-                <LanguageToggle openLabel={languageToggle.openLabel}
-                                title={languageToggle.title}
-                                languages={languageToggle.languages}
-                                done={languageToggle.done}
-                                router={router}/>
+                <button
+                    onClick={(e) => {
+                        setIsLanguagePopUpOpen(true)}}
+                    className="btn p-2.5 flex justify-center items-center"
+                    title={languageToggle.title}>
+                    <IoMdGlobe className="text-2xl text"/>
+                </button>
 
                 <IconLinkButton link="https://github.com/jonas-be" label={labels.githubLink}
                                 icon={<FaGithub className="text-2xl text"/>}/>
@@ -44,7 +48,14 @@ function Options({labels, languageToggle, router}: OptionProps) {
                     {optionDiv()}
                 </Popover.Panel>
             </Popover>
-
+            <LanguageToggle openLabel={languageToggle.openLabel}
+                            title={languageToggle.title}
+                            languages={languageToggle.languages}
+                            done={languageToggle.done}
+                            router={router}
+                            isOpen={isLanguagePopUpOpen}
+                            setIsOpen={setIsLanguagePopUpOpen}
+            />
         </>
     )
 }
