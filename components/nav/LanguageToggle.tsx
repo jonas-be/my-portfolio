@@ -67,7 +67,7 @@ export default function LanguageToggle({openLabel, title, languages, done, route
                                     <div className="mt-2">
                                         {languages.map(lang =>
                                             <button key={lang.id} onClick={() => changeLocale(lang.id)}
-                                                    className={`btn bg-accent w-full justify-between m-1 text `}>
+                                                    className={`btn bg-base w-full justify-between m-1 text `}>
                                                 {lang.id === router.locale ? <ImRadioChecked className="text-info text-lg w-4"/> : <ImRadioUnchecked className={"text text-lg w-4"}/>}
                                                 {lang.name}
                                                 <div className="w-4"/>

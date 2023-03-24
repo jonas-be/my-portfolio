@@ -112,7 +112,7 @@ function Index({pageContentData, projects}: Props) {
                     </div>
 
                     <AnimationOnScroll animateIn="animate__fadeInUp">
-                        <div className="bg-accent-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
+                        <div className="bg-base-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
                             <table className="max-w-sm">
                                 <caption
                                     className="text-accent text-lg pb-6">{pageContentData.content.aboutMe.header}</caption>

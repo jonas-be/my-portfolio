@@ -34,12 +34,12 @@
         bg-base-0 dark:bg-base-0-dark
     }
 
-    .bg-accent {
+    .bg-base {
         @apply
         bg-base-100 dark:bg-base-100-dark
     }
 
-    .bg-accent-2 {
+    .bg-base-2 {
         @apply
         bg-base-200 dark:bg-base-200-dark
     }
@@ -55,6 +55,16 @@
 
     .bg-gradient-reverse {
         background: linear-gradient(125deg, theme('colors.secondary / 25%') 0%, theme('colors.secondary / 5%') 34%, theme('colors.primary / 0%') 51%, theme('colors.primary / 5%') 74%, theme('colors.primary / 25%') 100%)
+    }
+
+    .border-base {
+        @apply
+        border-base-100 dark:border-base-100-dark
+    }
+
+    .border-base-2 {
+        @apply
+        border-base-200 dark:border-base-200-dark
     }
 }
 

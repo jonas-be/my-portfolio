@@ -16,9 +16,9 @@ export async function getContentDataJson(context: GetServerSidePropsContext, con
     }
 
     let contentUrl = contentDataType === ContentDataType.LIST ?
-        `http://jonasbe.de:30300/${path}/list/${lang}.json`
+        `https://content.jonasbe.de/${path}/list/${lang}.json`
         :
-        `http://jonasbe.de:30300/${contentDataType}${path}/${lang}.json`
+        `https://content.jonasbe.de/${contentDataType}${path}/${lang}.json`
     console.log(contentUrl)
     let data = await fetch(contentUrl)
     if (data.ok) {
