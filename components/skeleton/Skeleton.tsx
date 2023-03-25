@@ -14,7 +14,8 @@ const Skeleton = ({
                       bgGrid,
                       skeletonContentData,
                       children,
-                      router
+                      router,
+
                   }: SkeletonProps) => {
 
     return (
@@ -34,14 +35,14 @@ const Skeleton = ({
                 >
                     <Header logoTitle={skeletonContentData.header.logoTitle}
                             options={skeletonContentData.header.options}
+                            socials={skeletonContentData.socials}
                             router={router}
                     />
 
                     {children}
 
                     <Footer endOfSiteHeader={skeletonContentData.endOfSiteHeader}
-                            githubLink={skeletonContentData.githubLink}
-                            discordLink={skeletonContentData.discordLink}
+                            socials={skeletonContentData.socials}
                             impress={skeletonContentData.imprint}
                             copyright={skeletonContentData.copyright}
                     />
@@ -62,11 +63,23 @@ type SkeletonProps = {
     skeletonContentData: SkeletonContentData
 }
 
+export type Socials = {
+    twitterTitle: string
+    twitter: string
+    discordUserTitle: string
+    discordUser: string
+    discordServerTitle: string
+    discordServer: string
+    githubTitle: string
+    github: string
+    dockerTitle: string
+    docker: string
+}
+
 export type SkeletonContentData = {
     header: HeaderProps
+    socials: Socials
     endOfSiteHeader: string
-    githubLink: string
-    discordLink: string
     imprint: string
     copyright: string
 }

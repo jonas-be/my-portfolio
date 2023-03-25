@@ -11,6 +11,8 @@ import ReactMarkdown from "react-markdown";
 import ProjectList from "../components/common/ProjectList";
 import {ProjectLinkMapping} from "../components/utils/BlogSystemUtil";
 import WidthLimit from "../components/common/WidthLimit";
+import Link from "next/link";
+import Socials from "../components/common/Socials";
 
 
 type ContentData = {
@@ -101,6 +103,10 @@ function Index({pageContentData, projects}: Props) {
                     </h1>
 
                 </MouseParallaxContainer>
+
+                <div className="flex justify-center">
+                    <Socials/>
+                </div>
 
 
                 <div

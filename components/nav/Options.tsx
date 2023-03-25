@@ -7,8 +7,9 @@ import LanguageToggle, {LanguageToggleProps} from "./LanguageToggle";
 import {NextRouter} from "next/router";
 import {Popover} from "@headlessui/react";
 import {IoMdGlobe} from "react-icons/io";
+import {Socials} from "../skeleton/Skeleton";
 
-function Options({labels, languageToggle, router}: OptionProps) {
+function Options({labels, socials, languageToggle, router}: OptionProps) {
     let [isLanguagePopUpOpen, setIsLanguagePopUpOpen] = useState(false)
 
     function optionDiv() {
@@ -26,9 +27,9 @@ function Options({labels, languageToggle, router}: OptionProps) {
                     <IoMdGlobe className="text-2xl text"/>
                 </button>
 
-                <IconLinkButton link="https://github.com/jonas-be" label={labels.githubLink}
+                <IconLinkButton link={socials.github} label={socials.githubTitle}
                                 icon={<FaGithub className="text-2xl text"/>}/>
-                <IconLinkButton link="https://discord.gg/EbFsEQbB7J" label={labels.discordLink}
+                <IconLinkButton link={socials.discordServer} label={socials.discordServerTitle}
                                 icon={<FaDiscord className="text-2xl text"/>}/>
             </div>
         )
@@ -65,9 +66,8 @@ export type OptionProps = {
         drawer: string,
         darkModeToggleLight: string,
         darkModeToggleDark: string,
-        githubLink: string,
-        discordLink: string
     }
+    socials : Socials
     languageToggle: LanguageToggleProps
     router: NextRouter
 }

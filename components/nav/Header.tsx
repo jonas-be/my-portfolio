@@ -2,8 +2,9 @@ import React from 'react'
 import Options, {OptionProps} from './Options'
 import Link from "next/link";
 import {NextRouter} from "next/router";
+import {Socials} from "../skeleton/Skeleton";
 
-function Header({logoTitle, options, router}: HeaderProps) {
+function Header({logoTitle, options, socials, router}: HeaderProps) {
     return (
         <>
             <div className="
@@ -15,7 +16,7 @@ function Header({logoTitle, options, router}: HeaderProps) {
                     <p className='text-accent font-bold text-lg'>{logoTitle}</p>
                 </Link>
 
-                <Options labels={options.labels} languageToggle={options.languageToggle} router={router}/>
+                <Options labels={options.labels} languageToggle={options.languageToggle} socials={socials} router={router}/>
 
             </div>
             <div className='w-full h-[4.28rem]' />
@@ -26,6 +27,7 @@ function Header({logoTitle, options, router}: HeaderProps) {
 export type HeaderProps = {
     logoTitle: string
     options: OptionProps
+    socials: Socials
     router: NextRouter
 }
 
