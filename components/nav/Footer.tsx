@@ -1,7 +1,8 @@
 import React from 'react'
-import {FaBalanceScaleRight, FaDiscord, FaGithub} from "react-icons/fa";
+import {FaBalanceScaleRight} from "react-icons/fa";
 import Link from "next/link";
-import {Socials} from "../skeleton/Skeleton";
+import Socials from "../common/Socials";
+import {SocialsType} from "../skeleton/Skeleton";
 
 function Footer({endOfSiteHeader, socials, impress, copyright}: FooterProps) {
     return (
@@ -9,17 +10,9 @@ function Footer({endOfSiteHeader, socials, impress, copyright}: FooterProps) {
             <div className="bg border-t-1 border-base-2 z-30 relative">
                 <p className='text-accent font-bold text-xl text-center p-3'>{endOfSiteHeader}</p>
 
-                <Link href={socials.github}
-                   className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>
-                    <FaGithub className="text-2xl text"/>
-                    <div className="pl-2 text">{socials.githubTitle}</div>
-                </Link>
-
-                <Link href={socials.discordServer}
-                   className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>
-                    <FaDiscord className="text-2xl text"/>
-                    <div className="pl-2 text">{socials.discordServerTitle}</div>
-                </Link>
+                <div className="my-4">
+                    <Socials socials={socials}/>
+                </div>
 
                 <Link href={"/imprint"}
                       className='btn text font-medium text-lg p-1 flex flex-row justify-center items-center'>
@@ -35,7 +28,7 @@ function Footer({endOfSiteHeader, socials, impress, copyright}: FooterProps) {
 
 type FooterProps = {
     endOfSiteHeader: string
-    socials : Socials
+    socials: SocialsType
     impress: string
     copyright: string
 }

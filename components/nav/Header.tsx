@@ -2,7 +2,7 @@ import React from 'react'
 import Options, {OptionProps} from './Options'
 import Link from "next/link";
 import {NextRouter} from "next/router";
-import {Socials} from "../skeleton/Skeleton";
+import {SocialsType} from "../skeleton/Skeleton";
 
 function Header({logoTitle, options, socials, router}: HeaderProps) {
     return (
@@ -27,7 +27,7 @@ function Header({logoTitle, options, socials, router}: HeaderProps) {
 export type HeaderProps = {
     logoTitle: string
     options: OptionProps
-    socials: Socials
+    socials: SocialsType
     router: NextRouter
 }
 

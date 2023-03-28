@@ -81,7 +81,7 @@ function Index({pageContentData, projects}: Props) {
             <WidthLimit maxWidthClassNames="max-w-[70rem] xl:max-w-[90rem]">
 
                 <MouseParallaxContainer
-                    className="w-full h-[60vh] flex flex-col justify-center align-center"
+                    className="w-full h-[64vh] flex flex-col justify-center align-center"
                     globalFactorX={0.2} globalFactorY={0.0}
                     resetOnLeave
                     inverted={true}>
@@ -102,11 +102,13 @@ function Index({pageContentData, projects}: Props) {
                         </MouseParallaxChild>
                     </h1>
 
+                    <div className="mt-36">
+                        <Socials big={true} socials={skeletonContentData.socials}/>
+                    </div>
+
                 </MouseParallaxContainer>
 
-                <div className="flex justify-center">
-                    <Socials/>
-                </div>
+
 
 
                 <div

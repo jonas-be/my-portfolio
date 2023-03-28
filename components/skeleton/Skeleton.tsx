@@ -63,7 +63,7 @@ type SkeletonProps = {
     skeletonContentData: SkeletonContentData
 }
 
-export type Socials = {
+export type SocialsType = {
     twitterTitle: string
     twitter: string
     discordUserTitle: string
@@ -78,7 +78,7 @@ export type Socials = {
 
 export type SkeletonContentData = {
     header: HeaderProps
-    socials: Socials
+    socials: SocialsType
     endOfSiteHeader: string
     imprint: string
     copyright: string

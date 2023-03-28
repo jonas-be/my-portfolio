@@ -7,7 +7,7 @@ import LanguageToggle, {LanguageToggleProps} from "./LanguageToggle";
 import {NextRouter} from "next/router";
 import {Popover} from "@headlessui/react";
 import {IoMdGlobe} from "react-icons/io";
-import {Socials} from "../skeleton/Skeleton";
+import {SocialsType} from "../skeleton/Skeleton";
 
 function Options({labels, socials, languageToggle, router}: OptionProps) {
     let [isLanguagePopUpOpen, setIsLanguagePopUpOpen] = useState(false)
@@ -67,7 +67,7 @@ export type OptionProps = {
         darkModeToggleLight: string,
         darkModeToggleDark: string,
     }
-    socials : Socials
+    socials : SocialsType
     languageToggle: LanguageToggleProps
     router: NextRouter
 }
