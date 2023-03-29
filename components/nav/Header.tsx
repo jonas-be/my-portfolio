@@ -2,8 +2,9 @@ import React from 'react'
 import Options, {OptionProps} from './Options'
 import Link from "next/link";
 import {NextRouter} from "next/router";
+import {SocialsType} from "../skeleton/Skeleton";
 
-function Header({logoTitle, options, router}: HeaderProps) {
+function Header({logoTitle, options, socials, router}: HeaderProps) {
     return (
         <>
             <div className="
@@ -11,11 +12,11 @@ function Header({logoTitle, options, router}: HeaderProps) {
             flex justify-between items-center p-3 
              z-50" >
 
-                <Link href={"/"}  className="btn px-4 py-2 bg-accent-2 shadow-md rounded-2xl">
+                <Link href={"/"}  className="btn px-4 py-2 bg-base-2 shadow-md rounded-2xl">
                     <p className='text-accent font-bold text-lg'>{logoTitle}</p>
                 </Link>
 
-                <Options labels={options.labels} languageToggle={options.languageToggle} router={router}/>
+                <Options labels={options.labels} languageToggle={options.languageToggle} socials={socials} router={router}/>
 
             </div>
             <div className='w-full h-[4.28rem]' />
@@ -26,6 +27,7 @@ function Header({logoTitle, options, router}: HeaderProps) {
 export type HeaderProps = {
     logoTitle: string
     options: OptionProps
+    socials: SocialsType
     router: NextRouter
 }
 

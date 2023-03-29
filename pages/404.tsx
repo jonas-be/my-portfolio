@@ -27,7 +27,7 @@ function Error() {
                 <IoWarning className="text-error text-6xl"/>
                 <h1 className='text-6xl font-bold text-accent'>{pageContentData.content.heroFirstLine}</h1>
                 <div className="p-1">
-                    <div className="w-32 h-0.5 bg-accent-2 rounded-full "/>
+                    <div className="w-32 h-0.5 bg-base-2 rounded-full "/>
                 </div>
                 <h2 className='text-2xl font-bold text'>{pageContentData.content.heroSecondLine}</h2>
 

@@ -1,7 +1,7 @@
 import Skeleton from "../../components/skeleton/Skeleton";
 import {useRouter} from "next/router";
 import {selectLanguage, SKELETON_DATA} from "../../components/utils/StaticContentUtil";
-import ProjectList from "../../components/common/ProjectList";
+import ProjectList, {Projects} from "../../components/common/ProjectList";
 import {GetServerSidePropsContext} from "next";
 import {ProjectLinkMapping} from "../../components/utils/BlogSystemUtil";
 import {ContentDataType, getContentDataJson} from "../../components/utils/ContentDataUtil";
@@ -27,15 +27,13 @@ const Projects = ({projects}: Props) => {
                   gradient={true} bgGrid={false}
                   skeletonContentData={skeletonContentData}
                   router={router}>
-            <ProjectList baseUrl="/projects" list={projects.list}/>
+            <ProjectList baseUrl="/projects" projects={projects}/>
         </Skeleton>
     );
 };
 
 type Props = {
-    projects: {
-        list: ProjectLinkMapping[]
-    }
+    projects: Projects
 }
 
 
