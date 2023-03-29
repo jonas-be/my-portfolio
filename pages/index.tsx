@@ -8,7 +8,7 @@ import {ContentDataType, getContentDataJson} from "../components/utils/ContentDa
 import {selectLanguage, SKELETON_DATA} from "../components/utils/StaticContentUtil";
 import {useRouter} from "next/router";
 import ReactMarkdown from "react-markdown";
-import ProjectList from "../components/common/ProjectList";
+import ProjectList, {Projects} from "../components/common/ProjectList";
 import {ProjectLinkMapping} from "../components/utils/BlogSystemUtil";
 import WidthLimit from "../components/common/WidthLimit";
 import Link from "next/link";
@@ -152,7 +152,7 @@ function Index({pageContentData, projects}: Props) {
                     </AnimationOnScroll>
                 </div>
 
-                <ProjectList baseUrl="/projects" list={projects.list}/>
+                <ProjectList baseUrl="/projects" projects={projects} preview={true}/>
             </WidthLimit>
         </Skeleton>
     );
@@ -160,9 +160,7 @@ function Index({pageContentData, projects}: Props) {
 
 type Props = {
     pageContentData: ContentData,
-    projects: {
-        list: ProjectLinkMapping[]
-    },
+    projects: Projects
     skeletonContentData: SkeletonContentData
 }
 
