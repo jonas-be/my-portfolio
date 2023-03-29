@@ -5,9 +5,7 @@
       "labels": {
         "drawer": "Toggle Menü",
         "darkModeToggleLight": "Hellen Modus aktivieren",
-        "darkModeToggleDark": "Dunklen Modus aktivieren",
-        "githubLink": "GitHub",
-        "discordLink": "Community Discord"
+        "darkModeToggleDark": "Dunklen Modus aktivieren"
       },
       "languageToggle": {
         "openLabel": "Sprachwahl Menü öffnen",
@@ -26,9 +24,19 @@
       }
     }
   },
+  "socials": {
+    "twitterTitle": "Twitter",
+    "twitter": "https://twitter.com/JonasBe_",
+    "discordUserTitle": "Discord Account",
+    "discordUser": "https://discord.com/users/398876120696619008",
+    "discordServerTitle": "Discord Server",
+    "discordServer": "https://discord.gg/EbFsEQbB7J",
+    "githubTitle": "GitHub",
+    "github": "https://github.com/jonas-be",
+    "dockerTitle": "Docker Hub",
+    "docker": "https://hub.docker.com/u/jonasbe25"
+  },
   "endOfSiteHeader": "Ende der Seite",
-  "githubLink": "GitHub",
-  "discordLink": "Discord",
   "imprint": "Impressum",
   "copyright": "Copyright © Jonas Bender 2023"
 }

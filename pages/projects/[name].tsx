@@ -54,7 +54,41 @@ function Project({blogId, pageContentData}: Props) {
                   skeletonContentData={skeletonContentData}
                   router={router}>
 
-            <SiteBuilder content={pageContentData.content}/>
+            <SiteBuilder content={[
+                            {
+                                "type": "widthLimit",
+                                "children": [
+                                    {
+                                        "type": "heroSection",
+                                        "imgUrl": "https://content.jonasbe.de/assets/website-symbolic-icon-pixabay.png",
+                                        "mainHeading": "Portfolio Seite",
+                                        "introduction": "Diese Seite soll über mich informieren.\n\nZusätzlich kann man, hier Projekte von mir finden und mehr darüber erfahren.",
+                                        "mainButtonText": "Jetzt anschauen",
+                                        "mainButtonLink": "https://jonasbe.de",
+                                        "githubLink": "https://github.com/jonas-be/my-portfolio"
+                                    },
+                                    {
+                                        "type": "markdown",
+                                        "markdown": "## Technologien\n\n"
+                                    },
+                                    {
+                                        "type": "labelList",
+                                        "labels": [
+                                            "Typescript",
+                                            "NextJs",
+                                            "TailwindCSS",
+                                            "Nginx",
+                                            "Kubernetes"
+                                        ]
+                                    },
+                                    {
+                                        "type": "markdown",
+                                        "markdown": "Diese Website wurde mit NextJs und TailwindCSS erstellt.\n\nÜber die Infrastruktur:\n\nDie Website läuft auf Kubernetes. Und der Inhalt wird in JSON-Dateien auf einem einfachen Nginx-Server bereitgestellt, der ebenfalls im Kubernetes-Cluster läuft."
+                                    }
+                                ]
+                            }
+                        ]
+                   }/>
 
 
         </Skeleton>

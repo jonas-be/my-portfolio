@@ -9,12 +9,12 @@ import CodeStyle from "./CodeStyle";
 const StyleGuideComponent = ({children, title, code}: any) => {
 
     return (
-        <div className="rounded-2xl m-4 bg-accent overflow-hidden shadow">
+        <div className="rounded-2xl m-4 bg-base overflow-hidden shadow">
             <h3 className="text-accent font-bold px-4 py-2">{title}</h3>
             <div className="p-4 flex justify-center items-center gap-2">
                 {children}
             </div>
-            <div className="bg-accent-2 rounded-2xl ">
+            <div className="bg-base-2 rounded-2xl ">
                 <Disclosure>
                     {({open}) => (
                         <>

@@ -8,9 +8,11 @@ import {ContentDataType, getContentDataJson} from "../components/utils/ContentDa
 import {selectLanguage, SKELETON_DATA} from "../components/utils/StaticContentUtil";
 import {useRouter} from "next/router";
 import ReactMarkdown from "react-markdown";
-import ProjectList from "../components/common/ProjectList";
+import ProjectList, {Projects} from "../components/common/ProjectList";
 import {ProjectLinkMapping} from "../components/utils/BlogSystemUtil";
 import WidthLimit from "../components/common/WidthLimit";
+import Link from "next/link";
+import Socials from "../components/common/Socials";
 
 
 type ContentData = {
@@ -79,7 +81,7 @@ function Index({pageContentData, projects}: Props) {
             <WidthLimit maxWidthClassNames="max-w-[70rem] xl:max-w-[90rem]">
 
                 <MouseParallaxContainer
-                    className="w-full h-[60vh] flex flex-col justify-center align-center"
+                    className="w-full h-[64vh] flex flex-col justify-center align-center"
                     globalFactorX={0.2} globalFactorY={0.0}
                     resetOnLeave
                     inverted={true}>
@@ -100,7 +102,13 @@ function Index({pageContentData, projects}: Props) {
                         </MouseParallaxChild>
                     </h1>
 
+                    <div className="mt-36">
+                        <Socials big={true} socials={skeletonContentData.socials}/>
+                    </div>
+
                 </MouseParallaxContainer>
+
+
 
 
                 <div
@@ -112,7 +120,7 @@ function Index({pageContentData, projects}: Props) {
                     </div>
 
                     <AnimationOnScroll animateIn="animate__fadeInUp">
-                        <div className="bg-accent-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
+                        <div className="bg-base-2 w-max p-6 m-2 sm:m-4 sm:p-8 rounded-5xl">
                             <table className="max-w-sm">
                                 <caption
                                     className="text-accent text-lg pb-6">{pageContentData.content.aboutMe.header}</caption>
@@ -144,7 +152,7 @@ function Index({pageContentData, projects}: Props) {
                     </AnimationOnScroll>
                 </div>
 
-                <ProjectList baseUrl="/projects" list={projects.list}/>
+                <ProjectList baseUrl="/projects" projects={projects} preview={true}/>
             </WidthLimit>
         </Skeleton>
     );
@@ -152,9 +160,7 @@ function Index({pageContentData, projects}: Props) {
 
 type Props = {
     pageContentData: ContentData,
-    projects: {
-        list: ProjectLinkMapping[]
-    },
+    projects: Projects
     skeletonContentData: SkeletonContentData
 }
 

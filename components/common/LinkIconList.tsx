@@ -19,7 +19,7 @@ const LinkIconList = ({links}: Props) => {
     }
 
     return (
-        <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-around bg-accent p-4 mb-8">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-around bg-base p-4 mb-8">
             {links.map(i =>
                 <Link href={i.link} className="flex justify-center items-center gap-1 link no-underline text text-lg">
                     {getIcon(i.icon)}

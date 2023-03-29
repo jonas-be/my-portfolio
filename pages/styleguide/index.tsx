@@ -43,14 +43,14 @@ function Index() {
                         className="w-28 h-28 rounded-2xl bg-reverse text-accent-reverse font-semibold text-sm flex justify-center items-center">
                         <span>bg-reverse</span></div>
                     <div
-                        className="w-28 h-28 rounded-2xl bg-accent text font-semibold text-sm flex justify-center items-center">
+                        className="w-28 h-28 rounded-2xl bg-base text font-semibold text-sm flex justify-center items-center">
                         <span>bg-accent</span></div>
                     <div
-                        className="w-28 h-28 rounded-2xl bg-accent-2 text font-semibold text-sm flex justify-center items-center">
+                        className="w-28 h-28 rounded-2xl bg-base-2 text font-semibold text-sm flex justify-center items-center">
                         <span>bg-accent-2</span></div>
                 </div>
 
-                <div className="grid grid-cols-2 justify-items-center gap-12 bg-accent rounded-3xl py-12 md:p-8 ">
+                <div className="grid grid-cols-2 justify-items-center gap-12 bg-base rounded-3xl py-12 md:p-8 ">
                     <p className="text-left w-28 text-primary font-semibold text-sm">text-primary</p>
                     <p className="text-left w-28 text-secondary font-semibold text-sm">text-secondary</p>
                     <p className="text-left w-28 text-info font-semibold text-sm">text-info</p>

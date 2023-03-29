@@ -8,6 +8,9 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      borderWidth: {
+        '1': '1px'
+      },
       borderRadius: {
         '4xl': '2rem',
         '5xl': '3rem',
@@ -38,8 +41,8 @@ module.exports = {
         },
         'accent': {
           100: {
-            DEFAULT: '#52525b', // zinc-600
-            dark: '#a1a1aa', // zinc-400
+            DEFAULT: 'rgb(63 63 70)', // zinc-700
+            dark: 'rgb(212 212 216)', // zinc-300
           },
           200: {
             DEFAULT: '#000000', // black
