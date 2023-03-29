@@ -41,7 +41,7 @@ const ProjectList = ({baseUrl, projects, preview}: Props) => {
             {preview ?
                 <div className="flex justify-center">
                     <Link href={baseUrl}
-                          className="btn btn-lg rounded-full px-20 bg-primary text-accent font-bold my-4 mb-10 group/edit">
+                          className="btn btn-lg rounded-full px-20 bg-primary text-accent-200-dark font-bold my-4 mb-10 group/edit">
                         {projects.moreProjects}
                     </Link>
                 </div>
