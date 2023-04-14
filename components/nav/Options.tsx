@@ -27,9 +27,9 @@ function Options({labels, socials, languageToggle, router}: OptionProps) {
                     <IoMdGlobe className="text-2xl text"/>
                 </button>
 
-                <IconLinkButton link={socials.github} target="_blank" label={socials.githubTitle}
+                <IconLinkButton link={socials.github} label={socials.githubTitle}
                                 icon={<FaGithub className="text-2xl text"/>}/>
-                <IconLinkButton link={socials.discordServer} target="_blank" label={socials.discordServerTitle}
+                <IconLinkButton link={socials.discordServer} label={socials.discordServerTitle}
                                 icon={<FaDiscord className="text-2xl text"/>}/>
             </div>
         )

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function IconLinkButton({icon, link, label}: Props) {
     return (
-        <Link href={link} aria-label={label}
+        <Link href={link} target="_blank" aria-label={label}
               className="btn text p-2.5 flex justify-center items-center">
             {icon}
         </Link>
