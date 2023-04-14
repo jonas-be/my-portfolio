@@ -12,7 +12,7 @@ const ProjectList = ({baseUrl, projects, preview}: Props) => {
                 <h2 className="p-10 pb-4 text-3xl">{projects.projects}</h2>
             </Link>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${projects.list.length !== 2 ? "3":"2 px-52"}`}>
                 {(preview ? projects.list.slice(0, 3) : projects.list).map(i =>
                     <li key={i.primaryLink}
                         className=" flex flex-col justify-between
@@ -21,7 +21,7 @@ const ProjectList = ({baseUrl, projects, preview}: Props) => {
                             rounded-4xl overflow-hidden
                             border-base border-1">
                         <Link href={baseUrl + "/" + i.primaryLink}
-                              className="flex justify-center w-full h-52 bg-base border-base border-b-1">
+                              className="flex justify-center w-full h-52 bg-base-2 border-base ">
                             <img src={i.imgUrl} alt="symbolic project icon" className="h-full "/>
                         </Link>
                         <div className="w-full h-full flex flex-col justify-between px-4">
