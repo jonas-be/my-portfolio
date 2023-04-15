@@ -48,5 +48,7 @@ jobs:
 
       - name: Deploy to cluster
         run: |
-          kubectl apply -f kubernetes/deployment-prod.yaml
-          kubectl rollout restart deployment jonas-portfolio-prod
+          kubectl create namespace portfolio-prod
+          kubectl apply --namespace=portfolio-prod -f kubernetes/deployment.yaml
+          kubectl apply -f kubernetes/prod-service.yaml
+          kubectl rollout restart deployment jonas-portfolio --namespace=portfolio-prod
