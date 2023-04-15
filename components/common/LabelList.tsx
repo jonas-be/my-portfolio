@@ -1,5 +1,5 @@
 import React from 'react';
-import {SiKubernetes, SiNginx, SiTailwindcss, SiTypescript} from "react-icons/si";
+import {SiGo, SiKubernetes, SiNginx, SiTailwindcss, SiTypescript} from "react-icons/si";
 import {TbBrandNextjs} from "react-icons/tb";
 import {FaDiscord} from "react-icons/fa";
 import Link from "next/link";
@@ -72,6 +72,16 @@ const LabelList = ({labels}: Props) => {
                     textColor: "white",
                     border: false
                 }
+            case "golang":
+            case "go":
+                return {
+                    name: "GoLang",
+                    icon: <SiGo/>,
+                    link: "https://go.dev/",
+                    bgColor: "#00acd7",
+                    textColor: "white",
+                    border: false
+                }
 
             default:
                 return {name: iconName, icon: <div/>, link: "", bgColor: "black", textColor: "white", border: true}
@@ -90,7 +100,7 @@ const LabelList = ({labels}: Props) => {
                             transition: .3s ease-in-out;
                         }`}
                 </style>
-                <Link key={i} href={branding.link}
+                <Link key={i} href={branding.link} target="_blank"
                    className={`inline-flex items-center gap-1.5 p-0.5 m-0.5 px-2 rounded-full border-base ${branding.border ? "border-1" : ""} bg-base ${i} text-sm text`}>
                     <span className="text-lg">
                         {branding.icon}
