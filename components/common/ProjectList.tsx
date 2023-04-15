@@ -12,7 +12,7 @@ const ProjectList = ({baseUrl, projects, preview}: Props) => {
                 <h2 className="p-10 pb-4 text-3xl">{projects.projects}</h2>
             </Link>
 
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${projects.list.length !== 2 ? "3":"2 px-52"}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${projects.list.length !== 2 ? "3":"2 lg:px-28 xl:px-52"}`}>
                 {(preview ? projects.list.slice(0, 3) : projects.list).map(i =>
                     <li key={i.primaryLink}
                         className=" flex flex-col justify-between
