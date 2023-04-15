@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactMarkdown from "react-markdown";
-import Image from 'next/image'
 import Link from "next/link";
-import {FaDiscord, FaGithub} from "react-icons/fa";
+import {FaGithub} from "react-icons/fa";
 
 
 const HeroSection = ({imgUrl, mainHeading, introduction, mainButtonText, mainButtonLink, githubLink}: HeroSectionProps) => {
@@ -12,8 +11,8 @@ const HeroSection = ({imgUrl, mainHeading, introduction, mainButtonText, mainBut
                 <h1 className="pt-2 text-3xl">{mainHeading}</h1>
                 <ReactMarkdown className="text pt-2" children={introduction}/>
             <div className="pt-4 flex gap-2">
-                <Link className="btn bg-primary font-bold" href={mainButtonLink}>{mainButtonText}</Link>
-                <Link className="btn bg-[#333] text-lg" href={githubLink}><FaGithub/></Link>
+                <Link className="btn bg-primary font-bold" href={mainButtonLink} target="_blank">{mainButtonText}</Link>
+                <Link className="btn bg-[#333] text-lg" href={githubLink} target="_blank"><FaGithub/></Link>
 
             </div>
             </div>
