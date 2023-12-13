@@ -1,26 +1,17 @@
 # My Portfolio
 
+> [!WARNING]  
+> This repository is now in public arichve because it is no longer in use and is therefore no longer maintained.
+> 
+> _Unfortunately it was never hosted for public access, but a new portfolio will be available soon..._
+
 ## Technologies
 
 - NextJs
 - TailwindCss
 
-## Deployment
+## ~~Deployment~~
 
-The deployment runs with GitHub Actions.<br>
+~~The deployment runs with GitHub Actions.<br>
 First it's going to create a Docker Container and push it
-to [DockerHub](https://hub.docker.com/r/jonasbe25/my-portfolio).
-After that it will redeploy on Kubernetes.
-
-### Branches
-
-- **stage** -> deploy in [**test environment**](https://pre.jonasbe.de) ***(Password protected)***
-- **main** -> deploy in [**productive environment**](https://jonasbe.de) ***(Available soon)***
-
-### Environments
-|                 | Production         | Stage                     |
-|-----------------|--------------------|---------------------------|
-| **Branch**      | main               | stage                     |
-| **NodePort**    | 31500              | 31550                     |
-| **Url**         | https://jonasbe.de | https://pre.jonasbe.de    |
-| **Open Access** | ✔ *(soon)*         | ❌ *(Password Protection)* |
+to [DockerHub](https://hub.docker.com/r/jonasbe25/my-portfolio).~~
